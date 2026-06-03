@@ -310,3 +310,24 @@ if (contactForm) {
     contactForm.reset();
   });
 }
+
+// ===============================
+// AUTOPLAY VIDEO HERO EN CELULAR
+// ===============================
+const heroVideo = document.querySelector(".hero__video");
+
+if (heroVideo) {
+  heroVideo.muted = true;
+  heroVideo.loop = true;
+  heroVideo.playsInline = true;
+
+  const playHeroVideo = () => {
+    heroVideo.play().catch(() => {
+      console.log("El navegador bloqueó el autoplay hasta que el usuario interactúe.");
+    });
+  };
+
+  window.addEventListener("load", playHeroVideo);
+  document.addEventListener("touchstart", playHeroVideo, { once: true });
+  document.addEventListener("click", playHeroVideo, { once: true });
+}

@@ -316,9 +316,11 @@ p {
 }
 
 /* HERO */
+
 .hero {
   position: relative;
   display: flex;
+  width: 100%;
   min-height: 100vh;
   align-items: flex-end;
   overflow: hidden;
@@ -328,9 +330,17 @@ p {
 .hero__bg {
   position: absolute;
   inset: 0;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero__video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* Esta capa oscura permite que el texto se lea aunque cambies la foto */

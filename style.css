@@ -337,10 +337,11 @@ p {
 
 .hero__video {
   display: block;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
+  pointer-events: none;
 }
 
 /* Esta capa oscura permite que el texto se lea aunque cambies la foto */

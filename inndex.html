@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aleph Medios | Out of Home</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="#inicio" class="brand" aria-label="Aleph Medios inicio">
+        <span class="brand__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2L3 7l9 5 9-5-9-5zM3 17l9 5 9-5M3 12l9 5 9-5" />
+          </svg>
+        </span>
+
+        <span class="brand__text">
+          ALEPH
+          <small>Medios</small>
+        </span>
+      </a>
+
+      <div class="nav__right">
+        <div class="nav__links">
+          <a href="#about" data-i18n="navAbout">Nosotros</a>
+          <a href="#medios" data-i18n="navMedia">Medios</a>
+          <a href="#galeria" data-i18n="navProjects">Proyectos</a>
+          <a href="#contacto" class="nav__cta" data-i18n="navContact">Contacto</a>
+        </div>
+
+        <button class="language-toggle" id="languageToggle" type="button" aria-label="Cambiar idioma">
+          EN
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <!-- Cambia esta imagen después por: assets/hero.jpg -->
+      <div class="hero__bg" style="background-image:url('assets/hero.jpg')"></div>
+
+      <div class="container hero__content">
+        <p class="eyebrow" data-i18n="heroLabel">Out of Home · OOH Advertising</p>
+
+        <h1 data-i18n-html="heroTitle">
+          Convierte cada<br />rincón en tu <em>escaparate</em>
+        </h1>
+
+        <p class="hero__text" data-i18n="heroText">
+          Impacto que atrae todas las miradas. Llevamos tu marca a los mejores espacios de la ciudad con presencia que no se puede ignorar.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#medios" class="btn btn--light" data-i18n="heroPrimary">Ver nuestros medios</a>
+
+          <a href="#contacto" class="btn btn--ghost">
+            <span data-i18n="heroSecondary">Habla con nosotros</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <button class="scroll-hint" type="button" id="scrollHint" data-i18n="scroll">
+        Scroll
+      </button>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about section" id="about">
+      <div class="container about__grid">
+        <div class="about__content reveal-left">
+          <p class="section-tag" data-i18n="aboutTag">Nosotros</p>
+
+          <h2 data-i18n-html="aboutTitle">
+            Especialistas en <em>Out of Home</em>
+          </h2>
+
+          <p data-i18n="aboutTextOne">
+            Una empresa de publicidad especializada en el desarrollo de proyectos OOH, fundada hace 8 años con más de 35 años de experiencia desarrollando campañas por parte de nuestros socios.
+          </p>
+
+          <p data-i18n="aboutTextTwo">
+            Ubicamos tu marca en los espacios estratégicos de mayor impacto: autopistas, centros comerciales, transporte urbano y espacios digitales en exteriores.
+          </p>
+
+          <div class="stats">
+            <article class="stat">
+              <strong>8</strong>
+              <span data-i18n="statOne">Años en el mercado</span>
+            </article>
+
+            <article class="stat">
+              <strong>35+</strong>
+              <span data-i18n="statTwo">Años de experiencia</span>
+            </article>
+
+            <article class="stat">
+              <strong>OOH</strong>
+              <span data-i18n="statThree">Especialistas</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="about__images reveal-right">
+          <!-- Cambia estas imágenes después -->
+          <img class="about__img-main" src="assets/about-main.jpg" alt="Proyecto principal de Aleph Medios" />
+          <img class="about__img-float" src="assets/about-detail.jpg" alt="Detalle de publicidad exterior" />
+        </div>
+      </div>
+    </section>
+
+    <!-- MEDIOS -->
+    <section class="media section" id="medios">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 data-i18n-html="mediaTitle">Nuestros<br /><em>Medios</em></h2>
+          <p data-i18n="mediaText">Cada formato diseñado para maximizar el impacto de tu campaña en el entorno urbano.</p>
+        </div>
+
+        <div class="media__grid">
+          <article class="media-card">
+            <img src="assets/medio-espectaculares.jpg" alt="Espectaculares y vallas" />
+            <div class="media-card__overlay">
+              <span data-i18n="mediaOneTag">Formato Principal</span>
+              <h3 data-i18n="mediaOneTitle">Espectaculares & Vallas</h3>
+              <p data-i18n="mediaOneText">Estructuras de gran formato en vías primarias y autopistas de alta circulación vehicular.</p>
+            </div>
+          </article>
+
+          <article class="media-card">
+            <img src="assets/medio-pantallas.jpg" alt="Pantallas digitales" />
+            <div class="media-card__overlay">
+              <span data-i18n="mediaTwoTag">Digital OOH</span>
+              <h3 data-i18n="mediaTwoTitle">Pantallas Digitales</h3>
+              <p data-i18n="mediaTwoText">Tótems y mupis digitales con contenido dinámico y programable.</p>
+            </div>
+          </article>
+
+          <article class="media-card">
+            <img src="assets/medio-transporte.jpg" alt="Transporte urbano" />
+            <div class="media-card__overlay">
+              <span data-i18n="mediaThreeTag">Transit Media</span>
+              <h3 data-i18n="mediaThreeTitle">Transporte Urbano</h3>
+              <p data-i18n="mediaThreeText">Autobuses y flotillas de transporte que llevan tu marca a toda la ciudad.</p>
+            </div>
+          </article>
+
+          <article class="media-card">
+            <img src="assets/medio-mobile.jpg" alt="Campañas mobile y digitales" />
+            <div class="media-card__overlay">
+              <span data-i18n="mediaFourTag">Digital</span>
+              <h3 data-i18n="mediaFourTitle">Mobile & Digital</h3>
+              <p data-i18n="mediaFourText">Extensión digital de tus campañas para una cobertura 360° con geolocalización.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="gallery section" id="galeria">
+      <div class="container">
+        <div class="gallery__header reveal">
+          <p class="section-tag section-tag--light" data-i18n="galleryTag">Nuestros proyectos</p>
+          <h2 data-i18n-html="galleryTitle">Presencia en<br />toda la ciudad</h2>
+        </div>
+
+        <div class="masonry reveal">
+          <!-- Cambia estas imágenes después por tus fotos reales -->
+          <a class="masonry__item" href="#"><img src="assets/proyecto-1.jpg" alt="Proyecto 1" loading="lazy" /></a>
+          <a class="masonry__item" href="#"><img src="assets/proyecto-2.jpg" alt="Proyecto 2" loading="lazy" /></a>
+          <a class="masonry__item" href="#"><img src="assets/proyecto-3.jpg" alt="Proyecto 3" loading="lazy" /></a>
+          <a class="masonry__item" href="#"><img src="assets/proyecto-4.jpg" alt="Proyecto 4" loading="lazy" /></a>
+          <a class="masonry__item" href="#"><img src="assets/proyecto-5.jpg" alt="Proyecto 5" loading="lazy" /></a>
+          <a class="masonry__item" href="#"><img src="assets/proyecto-6.jpg" alt="Proyecto 6" loading="lazy" /></a>
+          <a class="masonry__item" href="#"><img src="assets/proyecto-7.jpg" alt="Proyecto 7" loading="lazy" /></a>
+          <a class="masonry__item" href="#"><img src="assets/proyecto-8.jpg" alt="Proyecto 8" loading="lazy" /></a>
+          <a class="masonry__item" href="#"><img src="assets/proyecto-9.jpg" alt="Proyecto 9" loading="lazy" /></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATEMENT -->
+    <section class="statement section">
+      <div class="container statement__inner">
+        <blockquote class="reveal" data-i18n="statementText">
+          Creemos que cada espacio en la ciudad es una oportunidad para contar una historia que mueve a las personas.
+        </blockquote>
+
+        <cite class="reveal" data-i18n="statementAuthor">Aleph Medios — Out of Home Advertising</cite>
+
+        <div class="statement__actions reveal">
+          <a href="#contacto" class="btn btn--dark" data-i18n="statementPrimary">Trabajemos juntos</a>
+          <a href="#medios" class="btn btn--dark" data-i18n="statementSecondary">Ver medios disponibles</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact section" id="contacto">
+      <div class="container contact__grid">
+        <div class="contact__content reveal-left">
+          <p class="section-tag section-tag--light" data-i18n="contactTag">Contacto</p>
+
+          <h2 data-i18n-html="contactTitle">Hablemos de<br />tu campaña</h2>
+
+          <p data-i18n="contactText">
+            Cuéntanos tu proyecto y te daremos la solución OOH ideal para tu marca. Nuestro equipo está listo para crear el impacto que necesitas.
+          </p>
+
+          <div class="contact-list">
+            <article class="contact-item">
+              <span class="contact-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+              </span>
+              <p>
+                <strong data-i18n="locationLabel">Ubicación</strong>
+                <span data-i18n="locationText">Ciudad de México, CDMX</span>
+              </p>
+            </article>
+
+            <article class="contact-item">
+              <span class="contact-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
+              </span>
+              <p>
+                <strong>Email</strong>
+                <span>contacto@alephmedios.mx</span>
+              </p>
+            </article>
+
+            <article class="contact-item">
+              <span class="contact-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" /></svg>
+              </span>
+              <p>
+                <strong data-i18n="phoneLabel">Teléfono</strong>
+                <span>+52 (55) 0000 0000</span>
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <form class="contact-form reveal-right">
+          <div class="form-row">
+            <label>
+              <span data-i18n="formName">Nombre</span>
+              <input type="text" name="nombre" data-i18n-placeholder="formNamePlaceholder" placeholder="Tu nombre" />
+            </label>
+
+            <label>
+              <span data-i18n="formCompany">Empresa</span>
+              <input type="text" name="empresa" data-i18n-placeholder="formCompanyPlaceholder" placeholder="Tu empresa" />
+            </label>
+          </div>
+
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="correo@empresa.com" />
+          </label>
+
+          <label>
+            <span data-i18n="formMediaType">Tipo de medio</span>
+            <select name="tipo">
+              <option value="" data-i18n="formSelect">Selecciona un formato</option>
+              <option data-i18n="mediaOneTitle">Espectaculares & Vallas</option>
+              <option data-i18n="mediaTwoTitle">Pantallas Digitales</option>
+              <option data-i18n="mediaThreeTitle">Transporte Urbano</option>
+              <option data-i18n="mediaFourTitle">Mobile & Digital</option>
+              <option data-i18n="formIntegral">Campaña integral</option>
+            </select>
+          </label>
+
+          <label>
+            <span data-i18n="formMessage">Cuéntanos tu proyecto</span>
+            <textarea name="mensaje" data-i18n-placeholder="formMessagePlaceholder" placeholder="Describe tu campaña, alcance deseado, zonas de interés..."></textarea>
+          </label>
+
+          <button class="form-submit" type="submit" data-i18n="formButton">
+            Enviar mensaje →
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#inicio" class="footer__brand">
+        <span class="brand__icon brand__icon--small" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2L3 7l9 5 9-5-9-5zM3 17l9 5 9-5M3 12l9 5 9-5" />
+          </svg>
+        </span>
+        <span>ALEPH Medios</span>
+      </a>
+
+      <div class="footer__links">
+        <a href="#about" data-i18n="navAbout">Nosotros</a>
+        <a href="#medios" data-i18n="navMedia">Medios</a>
+        <a href="#galeria" data-i18n="navProjects">Proyectos</a>
+        <a href="#contacto" data-i18n="navContact">Contacto</a>
+      </div>
+
+      <div class="footer__social">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+
+      <p class="footer__copy" data-i18n="footerCopy">
+        © 2026 Aleph Medios. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

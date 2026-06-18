@@ -590,10 +590,8 @@ p {
   color: var(--white);
 }
 
-.media-click-hint span {
-  font-size: 74px;
-  line-height: 1;
-}
+
+
 
 .media-click-hint p {
   margin-top: 8px;

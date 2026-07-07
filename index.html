@@ -235,7 +235,7 @@
             <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
           </span>
           <p>
-            <strong>Ubicación</strong>
+            <strong data-i18n="locationLabel">Ubicación</strong>
             <span>
               Valle de Morelos No. 19<br />
               Col. El Mirador<br />
@@ -250,7 +250,7 @@
             <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" /></svg>
           </span>
           <p>
-            <strong>Oficina</strong>
+            <strong data-i18n="officeLabel">Oficina</strong>
             <span>55 7827 0532</span>
           </p>
         </article>
@@ -260,7 +260,7 @@
             <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" /></svg>
           </span>
           <p>
-            <strong>Celular</strong>
+            <strong data-i18n="mobileLabel">Celular</strong>
             <span>55 5403 7859</span>
           </p>
         </article>
@@ -280,7 +280,7 @@
             <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 0 20a15.3 15.3 0 0 1 0-20z" /></svg>
           </span>
           <p>
-            <strong>Sitio web</strong>
+            <strong data-i18n="websiteLabel">Sitio web</strong>
             <span>www.alephmedios.com</span>
           </p>
         </article>
@@ -308,15 +308,14 @@
       <label>
         <span data-i18n="formMediaType">Tipo de medio</span>
         <select name="tipo">
-          <option value="" data-i18n="formSelect">Selecciona un formato</option>
-          <option>Carteleras espectaculares</option>
-          <option>Vallas</option>
-          <option>Parabuses</option>
-          <option>Mupis</option>
-          <option>Centros comerciales</option>
-          <option>Pantallas digitales</option>
-          <option>Transporte urbano</option>
-          <option>Publicidad móvil</option>
+          <option data-i18n="optionBillboards">Carteleras espectaculares</option>
+          <option data-i18n="optionFences">Vallas</option>
+          <option data-i18n="optionBusShelters">Parabuses</option>
+          <option data-i18n="optionMupis">Mupis</option>
+          <option data-i18n="optionMalls">Centros comerciales</option>
+          <option data-i18n="optionDigitalScreens">Pantallas digitales</option>
+          <option data-i18n="optionUrbanTransport">Transporte urbano</option>
+          <option data-i18n="optionMobileAdvertising">Publicidad móvil</option>
           <option data-i18n="formIntegral">Campaña integral</option>
         </select>
       </label>
@@ -348,9 +347,9 @@
       </div>
 
       <div class="footer__social">
-        <a href="#" aria-label="Instagram">Instagram</a>
-        <a href="#" aria-label="Facebook">Facebook</a>
-        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="Instagram" data-i18n="instagramLabel">Instagram</a>
+        <a href="#" aria-label="Facebook" data-i18n="facebookLabel">Facebook</a>
+        <a href="#" aria-label="LinkedIn" data-i18n="linkedinLabel">LinkedIn</a>
       </div>
 
       <p class="footer__copy" data-i18n="footerCopy">

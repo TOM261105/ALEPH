@@ -110,28 +110,29 @@ const translations = {
     mediaText:
       "Cada formato diseñado para maximizar el impacto de tu campaña en el entorno urbano.",
 
-    mediaOneTag: "Formato Principal",
-    mediaOneTitle: "Espectaculares & Vallas",
+    mediaTitleNew: "NUESTROS MEDIOS",
+
+    mediaOneTitle: "Carteleras",
     mediaOneText:
-      "Estructuras de gran formato en vías primarias y autopistas de alta circulación vehicular.",
+      "Carteleras espectaculares, vallas, parabuses, puentes, muros, etc.",
 
-    mediaTwoTag: "Digital OOH",
-    mediaTwoTitle: "Pantallas Digitales",
+    mediaTwoTitle: "Mupis",
     mediaTwoText:
-      "Tótems y mupis digitales con contenido dinámico y programable.",
+      "Mupis, publicidad en centros comerciales, posters, etc.",
 
-    mediaThreeTag: "Transit Media",
-    mediaThreeTitle: "Transporte Urbano",
+    mediaThreeTitle: "Pantallas Digitales",
     mediaThreeText:
-      "Autobuses y flotillas de transporte que llevan tu marca a toda la ciudad.",
+      "Pantallas digitales para contenido dinámico y de alto impacto.",
 
-    mediaFourTag: "Digital",
-    mediaFourTitle: "Mobile & Digital",
+    mediaFourTitle: "Transporte Urbano",
     mediaFourText:
-      "Extensión digital de tus campañas para una cobertura 360° con geolocalización.",
+      "Medios de transporte urbano para llevar tu marca por toda la ciudad.",
 
-    galleryTag: "Nuestros proyectos",
-    galleryTitle: "Presencia en<br />toda la ciudad",
+    mediaFiveTitle: "Publicidad Móvil",
+    mediaFiveText:
+      "Publicidad móvil para extender el alcance de tus campañas.",
+
+    mediaClick: "Haz clic para ver más información",
 
     statementText:
       "Creemos que cada espacio en la ciudad es una oportunidad para contar una historia que mueve a las personas.",
@@ -146,6 +147,24 @@ const translations = {
     locationLabel: "Ubicación",
     locationText: "Ciudad de México, CDMX",
     phoneLabel: "Teléfono",
+
+    locationLabel: "Ubicación",
+    officeLabel: "Oficina",
+    mobileLabel: "Celular",
+    websiteLabel: "Sitio web",
+
+    optionBillboards: "Carteleras espectaculares",
+    optionFences: "Vallas",
+    optionBusShelters: "Parabuses",
+    optionMupis: "Mupis",
+    optionMalls: "Centros comerciales",
+    optionDigitalScreens: "Pantallas digitales",
+    optionUrbanTransport: "Transporte urbano",
+    optionMobileAdvertising: "Publicidad móvil",
+
+    instagramLabel: "Instagram",
+    facebookLabel: "Facebook",
+    linkedinLabel: "LinkedIn",
 
     formName: "Nombre",
     formNamePlaceholder: "Tu nombre",
@@ -190,28 +209,29 @@ const translations = {
     mediaText:
       "Each format is designed to maximize the impact of your campaign in the urban environment.",
 
-    mediaOneTag: "Main Format",
-    mediaOneTitle: "Billboards & Outdoor Displays",
+    mediaTitleNew: "OUR MEDIA",
+
+    mediaOneTitle: "Billboards",
     mediaOneText:
-      "Large-format structures on main roads and high-traffic highways.",
+      "Billboards, outdoor displays, bus shelters, bridges, walls and more.",
 
-    mediaTwoTag: "Digital OOH",
-    mediaTwoTitle: "Digital Screens",
+    mediaTwoTitle: "Mupis",
     mediaTwoText:
-      "Digital totems and mupis with dynamic and programmable content.",
+      "Mupis, advertising in shopping centers, posters and more.",
 
-    mediaThreeTag: "Transit Media",
-    mediaThreeTitle: "Urban Transport",
+    mediaThreeTitle: "Digital Screens",
     mediaThreeText:
-      "Buses and transport fleets that carry your brand throughout the city.",
+      "Digital screens for dynamic and high-impact content.",
 
-    mediaFourTag: "Digital",
-    mediaFourTitle: "Mobile & Digital",
+    mediaFourTitle: "Urban Transport",
     mediaFourText:
-      "Digital extension of your campaigns for 360° coverage with geolocation.",
+      "Urban transport media to take your brand throughout the city.",
 
-    galleryTag: "Our projects",
-    galleryTitle: "Presence across<br />the entire city",
+    mediaFiveTitle: "Mobile Advertising",
+    mediaFiveText:
+      "Mobile advertising to extend the reach of your campaigns.",
+
+    mediaClick: "Click to see more information",
 
     statementText:
       "We believe that every space in the city is an opportunity to tell a story that moves people.",
@@ -226,6 +246,23 @@ const translations = {
     locationLabel: "Location",
     locationText: "Mexico City, CDMX",
     phoneLabel: "Phone",
+    locationLabel: "Location",
+    officeLabel: "Office",
+    mobileLabel: "Mobile",
+    websiteLabel: "Website",
+
+    optionBillboards: "Billboards",
+    optionFences: "Outdoor fences",
+    optionBusShelters: "Bus shelters",
+    optionMupis: "Mupis",
+    optionMalls: "Shopping centers",
+    optionDigitalScreens: "Digital screens",
+    optionUrbanTransport: "Urban transport",
+    optionMobileAdvertising: "Mobile advertising",
+
+    instagramLabel: "Instagram",
+    facebookLabel: "Facebook",
+    linkedinLabel: "LinkedIn",
 
     formName: "Name",
     formNamePlaceholder: "Your name",

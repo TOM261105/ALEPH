@@ -512,10 +512,15 @@ p {
   grid-column: span 2;
 }
 
-/* Filas siguientes: 2 tarjetas por fila (3 columnas cada una) */
+/* Filas siguientes: 2 tarjetas por fila, centradas y sin crecer de mas */
 .media-card:nth-child(n + 4) {
-  grid-column: span 3;
-  min-height: 420px;
+  grid-column: span 2;
+  min-height: 380px;
+}
+
+.media-card:nth-child(4),
+.media-card:nth-child(6) {
+  grid-column: 2 / span 2;
 }
 
 .media-card {
@@ -887,7 +892,7 @@ p {
   }
 
   .media-card:nth-child(n + 4) {
-    min-height: 380px;
+    min-height: 350px;
   }
 
   .media-card__info h3 {

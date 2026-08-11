@@ -522,6 +522,15 @@ p {
   transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
+.media-card--wide {
+  grid-column: 1 / -1;
+  min-height: 300px;
+}
+
+.media-card--wide .media-card__info {
+  padding-inline: 34px;
+}
+
 .media-card:hover,
 .media-card:focus-visible,
 .media-card.is-active {
@@ -896,6 +905,10 @@ p {
     min-height: 340px;
     border-radius: 52px;
   }
+
+  .media-card--wide {
+    min-height: 280px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -930,6 +943,16 @@ p {
     min-height: 400px;
     border-radius: 42px;
     scroll-snap-align: start;
+  }
+
+  /* En el riel todas las tarjetas miden igual */
+  .media-card--wide {
+    grid-column: auto;
+    min-height: 400px;
+  }
+
+  .media-card--wide .media-card__info {
+    padding-inline: 22px;
   }
 
   .media-rail-nav {
@@ -1553,41 +1576,5 @@ a.contact-item__value:hover {
     height: 100%;
     object-fit: cover;
     object-position: center center;
-  }
-}
-
-/* LOGO DE MI MARCA EN FOOTER */
-.footer {
-  position: relative;
-}
-
-.footer-credit-logo {
-  position: absolute;
-  right: 28px;
-  bottom: 18px;
-  display: block;
-  opacity: 0.55;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.footer-credit-logo:hover {
-  opacity: 1;
-  transform: translateY(-2px);
-}
-
-.footer-credit-logo img {
-  width: 58px;
-  height: auto;
-  display: block;
-}
-
-@media (max-width: 700px) {
-  .footer-credit-logo {
-    right: 18px;
-    bottom: 16px;
-  }
-
-  .footer-credit-logo img {
-    width: 44px;
   }
 }

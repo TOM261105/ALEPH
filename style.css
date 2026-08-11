@@ -1332,18 +1332,29 @@ a.contact-item__value:hover {
 }
 
 .brand__logo {
-  width: 250px;
+  width: 330px;
   height: auto;
   display: block;
   transition: width 0.35s ease;
 }
 
 .site-header.is-scrolled .brand__logo {
-  width: 200px;
+  width: 250px;
 }
 
 .footer .brand__logo {
   width: 190px;
+}
+
+/* En pantallas medianas el logo baja para no encimarse con el menu */
+@media (max-width: 960px) {
+  .brand__logo {
+    width: 240px;
+  }
+
+  .site-header.is-scrolled .brand__logo {
+    width: 200px;
+  }
 }
 
 @media (max-width: 700px) {

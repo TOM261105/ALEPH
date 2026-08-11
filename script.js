@@ -228,6 +228,10 @@ const translations = {
     mediaSixText:
       "Gran formato, rígidos, encuadernación y acabado de alto volumen.",
 
+    mediaSevenTitle: "Páginas Web y Tiendas en Línea",
+    mediaSevenText:
+      "Desarrollo de sitios web y comercio electrónico para llevar tu marca al entorno digital.",
+
     mediaMore: "Ver más información →",
     mediaClick: "Haz clic en cada medio para ver el detalle completo",
 
@@ -303,6 +307,18 @@ const translations = {
         <li>Empaque y apoyo en la distribución en toda la República Mexicana</li>
       </ul>`,
 
+    panelDigitalTitle: "Páginas Web y Tiendas en Línea",
+    panelDigitalBody: `
+      <p>Complementamos tu presencia en exteriores con una presencia digital a la altura de tu marca.</p>
+      <ul>
+        <li>Sitios web corporativos y de marca</li>
+        <li>Tiendas en línea y comercio electrónico</li>
+        <li>Landing pages para campañas</li>
+        <li>Diseño adaptado a celular y computadora</li>
+        <li>Catálogos digitales de productos</li>
+        <li>Integración con redes sociales</li>
+      </ul>`,
+
     statementText:
       "Creemos que cada espacio en la ciudad es una oportunidad para contar una historia que mueve a las personas.",
     statementAuthor: "Aleph Medios — Out of Home Advertising",
@@ -328,6 +344,7 @@ const translations = {
     optionUrbanTransport: "Transporte urbano",
     optionBtl: "Activaciones BTL",
     optionPrinting: "Impresión digital y offset",
+    optionWeb: "Páginas web y tiendas en línea",
     optionOther: "Otro",
     formOtherLabel: "¿Qué medio te interesa?",
     formOtherPlaceholder: "Escribe el medio que buscas",
@@ -394,6 +411,10 @@ const translations = {
     mediaSixTitle: "Digital and Offset Printing",
     mediaSixText:
       "Large format, rigid substrates, binding and high-volume finishing.",
+
+    mediaSevenTitle: "Websites and Online Stores",
+    mediaSevenText:
+      "Website and e-commerce development to bring your brand into the digital space.",
 
     mediaMore: "See more information →",
     mediaClick: "Click on each medium to see the full detail",
@@ -470,6 +491,18 @@ const translations = {
         <li>Packaging and distribution support throughout Mexico</li>
       </ul>`,
 
+    panelDigitalTitle: "Websites and Online Stores",
+    panelDigitalBody: `
+      <p>We complement your outdoor presence with a digital presence that matches your brand.</p>
+      <ul>
+        <li>Corporate and brand websites</li>
+        <li>Online stores and e-commerce</li>
+        <li>Campaign landing pages</li>
+        <li>Design adapted to mobile and desktop</li>
+        <li>Digital product catalogs</li>
+        <li>Social media integration</li>
+      </ul>`,
+
     statementText:
       "We believe that every space in the city is an opportunity to tell a story that moves people.",
     statementAuthor: "Aleph Medios — Out of Home Advertising",
@@ -495,6 +528,7 @@ const translations = {
     optionUrbanTransport: "Urban transport",
     optionBtl: "BTL activations",
     optionPrinting: "Digital and offset printing",
+    optionWeb: "Websites and online stores",
     optionOther: "Other",
     formOtherLabel: "Which medium are you looking for?",
     formOtherPlaceholder: "Type the medium you need",

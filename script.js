@@ -79,6 +79,53 @@ if (mediaCards.length > 0) {
 }
 
 // ===============================
+// RIEL DE MEDIOS EN CELULAR
+// ===============================
+const mediaRail = document.getElementById("mediaRail");
+const mediaRailPrev = document.getElementById("mediaRailPrev");
+const mediaRailNext = document.getElementById("mediaRailNext");
+
+if (mediaRail && mediaRailPrev && mediaRailNext && mediaCards.length > 0) {
+  function pasoDelRiel() {
+    // ancho de una tarjeta mas el gap entre tarjetas
+    return mediaCards[0].offsetWidth + 16;
+  }
+
+  function indiceActual() {
+    return Math.round(mediaRail.scrollLeft / pasoDelRiel());
+  }
+
+  function irATarjeta(indice) {
+    const limite = Math.max(0, Math.min(indice, mediaCards.length - 1));
+
+    mediaRail.scrollTo({
+      left: limite * pasoDelRiel(),
+      behavior: "smooth",
+    });
+  }
+
+  function actualizarFlechas() {
+    const maxScroll = mediaRail.scrollWidth - mediaRail.clientWidth;
+
+    mediaRailPrev.disabled = mediaRail.scrollLeft <= 4;
+    mediaRailNext.disabled = mediaRail.scrollLeft >= maxScroll - 4;
+  }
+
+  mediaRailPrev.addEventListener("click", () => irATarjeta(indiceActual() - 1));
+  mediaRailNext.addEventListener("click", () => irATarjeta(indiceActual() + 1));
+
+  let railTimer = null;
+
+  mediaRail.addEventListener("scroll", () => {
+    if (railTimer) window.cancelAnimationFrame(railTimer);
+    railTimer = window.requestAnimationFrame(actualizarFlechas);
+  });
+
+  window.addEventListener("resize", actualizarFlechas);
+  actualizarFlechas();
+}
+
+// ===============================
 // MODAL DE MEDIOS
 // ===============================
 const mediaModal = document.getElementById("mediaModal");

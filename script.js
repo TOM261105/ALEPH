@@ -79,6 +79,60 @@ if (mediaCards.length > 0) {
 }
 
 // ===============================
+// MODAL DE MEDIOS
+// ===============================
+const mediaModal = document.getElementById("mediaModal");
+const mediaPanels = document.querySelectorAll(".media-panel");
+let lastFocusedCard = null;
+
+function openMediaModal(panelName) {
+  if (!mediaModal) return;
+
+  mediaPanels.forEach((panel) => {
+    panel.hidden = panel.getAttribute("data-panel") !== panelName;
+  });
+
+  mediaModal.hidden = false;
+  document.body.classList.add("no-scroll");
+
+  const scrollArea = mediaModal.querySelector(".media-modal__scroll");
+  if (scrollArea) scrollArea.scrollTop = 0;
+
+  mediaModal.querySelector(".media-modal__close")?.focus();
+}
+
+function closeMediaModal() {
+  if (!mediaModal) return;
+
+  mediaModal.hidden = true;
+  document.body.classList.remove("no-scroll");
+
+  lastFocusedCard?.focus();
+}
+
+mediaCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    const panelName = card.getAttribute("data-modal");
+    if (!panelName) return;
+
+    lastFocusedCard = card;
+    openMediaModal(panelName);
+  });
+});
+
+if (mediaModal) {
+  mediaModal.querySelectorAll("[data-close-modal]").forEach((element) => {
+    element.addEventListener("click", closeMediaModal);
+  });
+}
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && mediaModal && !mediaModal.hidden) {
+    closeMediaModal();
+  }
+});
+
+// ===============================
 // TRADUCCIÓN ESPAÑOL / INGLÉS
 // ===============================
 const translations = {
@@ -90,25 +144,17 @@ const translations = {
 
     heroLabel: "Out of Home · OOH Advertising",
     heroTitle: "Convierte cada<br />rincón en tu <em>escaparate</em>",
-    heroText:
-      "Impacto que atrae todas las miradas. Llevamos tu marca a los mejores espacios de la ciudad con presencia que no se puede ignorar.",
     heroPrimary: "Ver nuestros medios",
     heroSecondary: "Habla con nosotros",
     scroll: "Scroll",
 
     aboutTag: "Nosotros",
-    aboutTitle: "Especialistas en <em>Out of Home</em>",
+    aboutTitle: "Especialistas<br /><em>Out of Home</em>",
     aboutTextOne:
-      "Una empresa de publicidad especializada en el desarrollo de proyectos OOH, fundada hace 8 años con más de 35 años de experiencia desarrollando campañas por parte de nuestros socios.",
-    aboutTextTwo:
-      "Ubicamos tu marca en los espacios estratégicos de mayor impacto: autopistas, centros comerciales, transporte urbano y espacios digitales en exteriores.",
-    statOne: "Años en el mercado",
+      "Empresa de publicidad especializada en el desarrollo de proyectos OOH, fundada hace 10 años con más de 38 años de experiencia desarrollando proyectos en medios exteriores.",
+    aboutTextTwo: "Estrategias basadas en datos y resultados tangibles.",
     statTwo: "Años de experiencia",
     statThree: "Especialistas",
-
-    mediaTitle: "Nuestros<br /><em>Medios</em>",
-    mediaText:
-      "Cada formato diseñado para maximizar el impacto de tu campaña en el entorno urbano.",
 
     mediaTitleNew: "NUESTROS MEDIOS",
 
@@ -117,8 +163,7 @@ const translations = {
       "Carteleras espectaculares, vallas, parabuses, puentes, muros, etc.",
 
     mediaTwoTitle: "Mupis",
-    mediaTwoText:
-      "Mupis, publicidad en centros comerciales, posters, etc.",
+    mediaTwoText: "Mupis, publicidad en centros comerciales, posters, etc.",
 
     mediaThreeTitle: "Pantallas Digitales",
     mediaThreeText:
@@ -128,11 +173,87 @@ const translations = {
     mediaFourText:
       "Medios de transporte urbano para llevar tu marca por toda la ciudad.",
 
-    mediaFiveTitle: "Publicidad Móvil",
+    mediaFiveTitle: "Activaciones BTL",
     mediaFiveText:
-      "Publicidad móvil para extender el alcance de tus campañas.",
+      "Volanteo, publiandantes, loneros y activaciones en punto de venta.",
+
+    mediaSixTitle: "Impresión Digital y Offset",
+    mediaSixText:
+      "Gran formato, rígidos, encuadernación y acabado de alto volumen.",
 
     mediaClick: "Haz clic para ver más información",
+
+    panelCartelerasTitle: "Carteleras",
+    panelCartelerasBody: `
+      <p>Presencia de gran formato en los puntos de mayor afluencia de la ciudad.</p>
+      <ul>
+        <li>Carteleras espectaculares</li>
+        <li>Vallas</li>
+        <li>Parabuses</li>
+        <li>Puentes peatonales</li>
+        <li>Muros y bardas</li>
+      </ul>`,
+
+    panelMupisTitle: "Mupis",
+    panelMupisBody: `
+      <p>Formatos a nivel de calle y en interiores, cerca del momento de compra.</p>
+      <ul>
+        <li>Mupis en vía pública</li>
+        <li>Publicidad en centros comerciales</li>
+        <li>Posters y carteles</li>
+        <li>Espacios en aeropuertos y plazas</li>
+      </ul>`,
+
+    panelPantallasTitle: "Pantallas Digitales",
+    panelPantallasBody: `
+      <p>Contenido dinámico, con rotación programada y cambios de mensaje en el momento.</p>
+      <ul>
+        <li>Pantallas LED de gran formato</li>
+        <li>Circuitos digitales en centros comerciales</li>
+        <li>Pantallas en interiores y corporativos</li>
+        <li>Contenido en video y animación</li>
+      </ul>`,
+
+    panelTransporteTitle: "Transporte Urbano",
+    panelTransporteBody: `
+      <p>Tu marca circulando por toda la ciudad, con cobertura de ruta completa.</p>
+      <ul>
+        <li>Autobuses y microbuses</li>
+        <li>Metro y transporte masivo</li>
+        <li>Taxis y unidades de reparto</li>
+        <li>Estaciones y andenes</li>
+      </ul>`,
+
+    panelBtlTitle: "Activaciones BTL",
+    panelBtlBody: `
+      <p>Contacto directo con tu público, en la calle y en el punto de venta.</p>
+      <ul>
+        <li>Activaciones BTL</li>
+        <li>Volanteo</li>
+        <li>Publiandantes</li>
+        <li>Loneros</li>
+        <li>Botargas, sampling y demostraciones</li>
+      </ul>`,
+
+    panelImpresionTitle: "Impresión Digital y Offset",
+    panelImpresionBody: `
+      <h4>Impresión en offset</h4>
+      <p>Contamos con experiencia en diseño e impresión de alto volumen, encuadernación y acabado.</p>
+      <p>Manejamos papeles desde 60 gramos hasta 24 puntos (couché, bond, diario, revolución, adhesivos, caple, sulfatadas, polypap, entre otros), además realizamos impresión sobre papel especial grado alimenticio.</p>
+      <ul>
+        <li>Papeles especiales grado alimenticio</li>
+        <li>Etiquetas adhesivas</li>
+        <li>Libros, manuales y libretas pasta dura</li>
+        <li>Revistas, catálogos y flyers</li>
+        <li>Folletería, posters y calendarios</li>
+        <li>Cajas, empaque y papelería</li>
+      </ul>
+      <h4>Impresión digital</h4>
+      <ul>
+        <li>Impresión digital en alta resolución, gran formato y rígidos</li>
+        <li>Lona plastificada, lona mesh, vinil autoadherible, vinil electrostático, coroplast, foam board, trovicel, estireno, etc.</li>
+        <li>Empaque y apoyo en la distribución en toda la República Mexicana</li>
+      </ul>`,
 
     statementText:
       "Creemos que cada espacio en la ciudad es una oportunidad para contar una historia que mueve a las personas.",
@@ -144,9 +265,6 @@ const translations = {
     contactTitle: "Hablemos de<br />tu campaña",
     contactText:
       "Cuéntanos tu proyecto y te daremos la solución OOH ideal para tu marca. Nuestro equipo está listo para crear el impacto que necesitas.",
-    locationLabel: "Ubicación",
-    locationText: "Ciudad de México, CDMX",
-    phoneLabel: "Teléfono",
 
     locationLabel: "Ubicación",
     officeLabel: "Oficina",
@@ -160,7 +278,8 @@ const translations = {
     optionMalls: "Centros comerciales",
     optionDigitalScreens: "Pantallas digitales",
     optionUrbanTransport: "Transporte urbano",
-    optionMobileAdvertising: "Publicidad móvil",
+    optionBtl: "Activaciones BTL",
+    optionPrinting: "Impresión digital y offset",
 
     instagramLabel: "Instagram",
     facebookLabel: "Facebook",
@@ -189,25 +308,17 @@ const translations = {
 
     heroLabel: "Out of Home · OOH Advertising",
     heroTitle: "Turn every<br />corner into your <em>showcase</em>",
-    heroText:
-      "Impact that captures every look. We take your brand to the best spaces in the city with a presence that cannot be ignored.",
     heroPrimary: "View our media",
     heroSecondary: "Talk to us",
     scroll: "Scroll",
 
     aboutTag: "About us",
-    aboutTitle: "Specialists in <em>Out of Home</em>",
+    aboutTitle: "Specialists in<br /><em>Out of Home</em>",
     aboutTextOne:
-      "An advertising company specialized in the development of OOH projects, founded 8 years ago with more than 35 years of campaign experience through our partners.",
-    aboutTextTwo:
-      "We place your brand in the most strategic high-impact spaces: highways, shopping centers, urban transport and outdoor digital spaces.",
-    statOne: "Years in the market",
+      "An advertising company specialized in the development of OOH projects, founded 10 years ago with more than 38 years of experience developing outdoor media projects.",
+    aboutTextTwo: "Strategies built on data and tangible results.",
     statTwo: "Years of experience",
     statThree: "Specialists",
-
-    mediaTitle: "Our<br /><em>Media</em>",
-    mediaText:
-      "Each format is designed to maximize the impact of your campaign in the urban environment.",
 
     mediaTitleNew: "OUR MEDIA",
 
@@ -216,22 +327,96 @@ const translations = {
       "Billboards, outdoor displays, bus shelters, bridges, walls and more.",
 
     mediaTwoTitle: "Mupis",
-    mediaTwoText:
-      "Mupis, advertising in shopping centers, posters and more.",
+    mediaTwoText: "Mupis, advertising in shopping centers, posters and more.",
 
     mediaThreeTitle: "Digital Screens",
-    mediaThreeText:
-      "Digital screens for dynamic and high-impact content.",
+    mediaThreeText: "Digital screens for dynamic and high-impact content.",
 
     mediaFourTitle: "Urban Transport",
     mediaFourText:
       "Urban transport media to take your brand throughout the city.",
 
-    mediaFiveTitle: "Mobile Advertising",
+    mediaFiveTitle: "BTL Activations",
     mediaFiveText:
-      "Mobile advertising to extend the reach of your campaigns.",
+      "Flyering, walking billboards, banner crews and point-of-sale activations.",
+
+    mediaSixTitle: "Digital and Offset Printing",
+    mediaSixText:
+      "Large format, rigid substrates, binding and high-volume finishing.",
 
     mediaClick: "Click to see more information",
+
+    panelCartelerasTitle: "Billboards",
+    panelCartelerasBody: `
+      <p>Large-format presence at the busiest points in the city.</p>
+      <ul>
+        <li>Spectacular billboards</li>
+        <li>Outdoor displays</li>
+        <li>Bus shelters</li>
+        <li>Pedestrian bridges</li>
+        <li>Walls and fences</li>
+      </ul>`,
+
+    panelMupisTitle: "Mupis",
+    panelMupisBody: `
+      <p>Street-level and indoor formats, close to the moment of purchase.</p>
+      <ul>
+        <li>Street mupis</li>
+        <li>Advertising in shopping centers</li>
+        <li>Posters and signage</li>
+        <li>Airport and plaza spaces</li>
+      </ul>`,
+
+    panelPantallasTitle: "Digital Screens",
+    panelPantallasBody: `
+      <p>Dynamic content with scheduled rotation and real-time message changes.</p>
+      <ul>
+        <li>Large-format LED screens</li>
+        <li>Digital circuits in shopping centers</li>
+        <li>Indoor and corporate screens</li>
+        <li>Video and animated content</li>
+      </ul>`,
+
+    panelTransporteTitle: "Urban Transport",
+    panelTransporteBody: `
+      <p>Your brand moving across the city, with full route coverage.</p>
+      <ul>
+        <li>Buses and minibuses</li>
+        <li>Metro and mass transit</li>
+        <li>Taxis and delivery vehicles</li>
+        <li>Stations and platforms</li>
+      </ul>`,
+
+    panelBtlTitle: "BTL Activations",
+    panelBtlBody: `
+      <p>Direct contact with your audience, on the street and at the point of sale.</p>
+      <ul>
+        <li>BTL activations</li>
+        <li>Flyering</li>
+        <li>Walking billboards</li>
+        <li>Banner crews</li>
+        <li>Mascots, sampling and demonstrations</li>
+      </ul>`,
+
+    panelImpresionTitle: "Digital and Offset Printing",
+    panelImpresionBody: `
+      <h4>Offset printing</h4>
+      <p>We have experience in design and high-volume printing, binding and finishing.</p>
+      <p>We handle papers from 60 grams up to 24 points (couché, bond, newsprint, revolución, adhesives, caple, sulphate board, polypap, among others), and we also print on special food-grade paper.</p>
+      <ul>
+        <li>Special food-grade papers</li>
+        <li>Adhesive labels</li>
+        <li>Books, manuals and hardcover notebooks</li>
+        <li>Magazines, catalogs and flyers</li>
+        <li>Brochures, posters and calendars</li>
+        <li>Boxes, packaging and stationery</li>
+      </ul>
+      <h4>Digital printing</h4>
+      <ul>
+        <li>High-resolution digital printing, large format and rigid substrates</li>
+        <li>Laminated banner, mesh banner, self-adhesive vinyl, electrostatic vinyl, coroplast, foam board, trovicel, styrene, etc.</li>
+        <li>Packaging and distribution support throughout Mexico</li>
+      </ul>`,
 
     statementText:
       "We believe that every space in the city is an opportunity to tell a story that moves people.",
@@ -243,9 +428,7 @@ const translations = {
     contactTitle: "Let's talk about<br />your campaign",
     contactText:
       "Tell us about your project and we will give you the ideal OOH solution for your brand. Our team is ready to create the impact you need.",
-    locationLabel: "Location",
-    locationText: "Mexico City, CDMX",
-    phoneLabel: "Phone",
+
     locationLabel: "Location",
     officeLabel: "Office",
     mobileLabel: "Mobile",
@@ -258,7 +441,8 @@ const translations = {
     optionMalls: "Shopping centers",
     optionDigitalScreens: "Digital screens",
     optionUrbanTransport: "Urban transport",
-    optionMobileAdvertising: "Mobile advertising",
+    optionBtl: "BTL activations",
+    optionPrinting: "Digital and offset printing",
 
     instagramLabel: "Instagram",
     facebookLabel: "Facebook",
@@ -296,7 +480,7 @@ function changeLanguage(language) {
     }
   });
 
-  // Cambia textos con HTML, por ejemplo <br> o <em>
+  // Cambia textos con HTML, por ejemplo <br>, <em> o listas
   document.querySelectorAll("[data-i18n-html]").forEach((element) => {
     const key = element.getAttribute("data-i18n-html");
 

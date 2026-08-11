@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 
 <body>
@@ -451,18 +451,24 @@
 
       <label>
         <span data-i18n="formMediaType">Tipo de medio</span>
-        <select name="tipo">
-          <option data-i18n="optionBillboards">Carteleras espectaculares</option>
-          <option data-i18n="optionFences">Vallas</option>
-          <option data-i18n="optionBusShelters">Parabuses</option>
-          <option data-i18n="optionMupis">Mupis</option>
-          <option data-i18n="optionMalls">Centros comerciales</option>
-          <option data-i18n="optionDigitalScreens">Pantallas digitales</option>
-          <option data-i18n="optionUrbanTransport">Transporte urbano</option>
-          <option data-i18n="optionBtl">Activaciones BTL</option>
-          <option data-i18n="optionPrinting">Impresión digital y offset</option>
-          <option data-i18n="formIntegral">Campaña integral</option>
+        <select name="tipo" id="mediaTypeSelect">
+          <option value="carteleras" data-i18n="optionBillboards">Carteleras espectaculares</option>
+          <option value="vallas" data-i18n="optionFences">Vallas</option>
+          <option value="parabuses" data-i18n="optionBusShelters">Parabuses</option>
+          <option value="mupis" data-i18n="optionMupis">Mupis</option>
+          <option value="centros" data-i18n="optionMalls">Centros comerciales</option>
+          <option value="pantallas" data-i18n="optionDigitalScreens">Pantallas digitales</option>
+          <option value="transporte" data-i18n="optionUrbanTransport">Transporte urbano</option>
+          <option value="btl" data-i18n="optionBtl">Activaciones BTL</option>
+          <option value="impresion" data-i18n="optionPrinting">Impresión digital y offset</option>
+          <option value="integral" data-i18n="formIntegral">Campaña integral</option>
+          <option value="otro" data-i18n="optionOther">Otro</option>
         </select>
+      </label>
+
+      <label class="form-other" id="formOther" hidden>
+        <span data-i18n="formOtherLabel">¿Qué medio te interesa?</span>
+        <input type="text" name="otroMedio" data-i18n-placeholder="formOtherPlaceholder" placeholder="Escribe el medio que buscas" />
       </label>
 
       <label>
@@ -503,6 +509,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>

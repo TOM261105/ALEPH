@@ -281,6 +281,9 @@ const translations = {
     optionUrbanTransport: "Transporte urbano",
     optionBtl: "Activaciones BTL",
     optionPrinting: "Impresión digital y offset",
+    optionOther: "Otro",
+    formOtherLabel: "¿Qué medio te interesa?",
+    formOtherPlaceholder: "Escribe el medio que buscas",
 
     instagramLabel: "Instagram",
     facebookLabel: "Facebook",
@@ -445,6 +448,9 @@ const translations = {
     optionUrbanTransport: "Urban transport",
     optionBtl: "BTL activations",
     optionPrinting: "Digital and offset printing",
+    optionOther: "Other",
+    formOtherLabel: "Which medium are you looking for?",
+    formOtherPlaceholder: "Type the medium you need",
 
     instagramLabel: "Instagram",
     facebookLabel: "Facebook",
@@ -518,6 +524,18 @@ if (languageToggle) {
 // FORMULARIO
 // ===============================
 const contactForm = document.querySelector(".contact-form");
+const mediaTypeSelect = document.getElementById("mediaTypeSelect");
+const otherField = document.getElementById("formOther");
+
+function toggleOtherField() {
+  if (!mediaTypeSelect || !otherField) return;
+  otherField.hidden = mediaTypeSelect.value !== "otro";
+}
+
+if (mediaTypeSelect) {
+  mediaTypeSelect.addEventListener("change", toggleOtherField);
+  toggleOtherField();
+}
 
 if (contactForm) {
   contactForm.addEventListener("submit", (event) => {
@@ -531,26 +549,59 @@ if (contactForm) {
     alert(message);
 
     contactForm.reset();
+    toggleOtherField();
   });
 }
 
 // ===============================
-// AUTOPLAY VIDEO HERO EN CELULAR
+// AUTOPLAY DE VIDEOS EN CELULAR
 // ===============================
-const heroVideo = document.querySelector(".hero__video");
+const autoVideos = document.querySelectorAll(".hero__video, .about__video-main");
 
-if (heroVideo) {
-  heroVideo.muted = true;
-  heroVideo.loop = true;
-  heroVideo.playsInline = true;
+autoVideos.forEach((video) => {
+  video.muted = true;
+  video.defaultMuted = true;
+  video.loop = true;
+  video.playsInline = true;
+  video.setAttribute("muted", "");
+  video.setAttribute("playsinline", "");
+  video.setAttribute("webkit-playsinline", "");
+  video.removeAttribute("controls");
+});
 
-  const playHeroVideo = () => {
-    heroVideo.play().catch(() => {
-      console.log("El navegador bloqueó el autoplay hasta que el usuario interactúe.");
-    });
-  };
+function playAllVideos() {
+  autoVideos.forEach((video) => {
+    const intento = video.play();
 
-  window.addEventListener("load", playHeroVideo);
-  document.addEventListener("touchstart", playHeroVideo, { once: true });
-  document.addEventListener("click", playHeroVideo, { once: true });
+    if (intento !== undefined) {
+      intento.catch(() => {
+        // iOS en modo de bajo consumo bloquea el autoplay hasta que hay interaccion
+      });
+    }
+  });
 }
+
+// Intentos en los momentos en que iOS suele permitirlo
+window.addEventListener("load", playAllVideos);
+document.addEventListener("DOMContentLoaded", playAllVideos);
+document.addEventListener("touchstart", playAllVideos, { once: true });
+document.addEventListener("click", playAllVideos, { once: true });
+document.addEventListener("scroll", playAllVideos, { once: true });
+
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden) playAllVideos();
+});
+
+// Si el video entra en pantalla y sigue pausado, se reintenta
+const videoObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && entry.target.paused) {
+        entry.target.play().catch(() => {});
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+autoVideos.forEach((video) => videoObserver.observe(video));

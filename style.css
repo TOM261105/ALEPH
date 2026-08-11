@@ -1052,6 +1052,10 @@ a.contact-item__value:hover {
   gap: 12px;
 }
 
+.form-other[hidden] {
+  display: none;
+}
+
 .contact-form label {
   display: grid;
   gap: 7px;
@@ -1285,7 +1289,29 @@ a.contact-item__value:hover {
   .hero {
     width: 100vw;
     min-height: 100vh;
-    padding-bottom: 60px;
+    align-items: center;
+    padding-top: 110px;
+    padding-bottom: 130px;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 9.4vw, 44px);
+  }
+
+  .hero .eyebrow {
+    gap: 10px;
+    margin-bottom: 18px;
+    font-size: 10px;
+    letter-spacing: 2.2px;
+  }
+
+  .hero .eyebrow::before {
+    width: 24px;
+  }
+
+  .hero__actions {
+    gap: 16px;
+    margin-top: 32px;
   }
 
   .hero__bg {
@@ -1332,14 +1358,25 @@ a.contact-item__value:hover {
   }
 
   .hero__actions,
-  .stats,
   .statement__actions {
     align-items: flex-start;
     flex-direction: column;
   }
 
+  /* Los datos se quedan en fila: 38+ y OOH uno junto al otro */
   .stats {
-    gap: 28px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 34px;
+  }
+
+  .stat strong {
+    font-size: 34px;
+  }
+
+  .stat span {
+    font-size: 11px;
+    letter-spacing: 0.06em;
   }
 
   .masonry {
@@ -1348,6 +1385,46 @@ a.contact-item__value:hover {
 
   .form-row {
     grid-template-columns: 1fr;
+  }
+
+  /* Contacto mas compacto en celular */
+  .contact__grid {
+    gap: 38px;
+  }
+
+  .contact__content > p:not(.section-tag) {
+    margin-top: 18px;
+    font-size: 15px;
+  }
+
+  .contact-list {
+    gap: 14px;
+    margin-top: 26px;
+  }
+
+  .contact-item {
+    gap: 12px;
+  }
+
+  .contact-item__icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+  }
+
+  .contact-item__icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .contact-item p {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .contact-item strong {
+    margin-bottom: 1px;
+    font-size: 12px;
   }
 
   .scroll-hint {
@@ -1371,7 +1448,7 @@ a.contact-item__value:hover {
   }
 
   h1 {
-    font-size: clamp(38px, 13vw, 52px);
+    font-size: clamp(30px, 8.8vw, 40px);
   }
 
   .hero {

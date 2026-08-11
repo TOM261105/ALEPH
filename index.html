@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="style.css?v=8" />
 </head>
 
 <body>
@@ -130,7 +130,7 @@
       <h2 data-i18n="mediaTitleNew">NUESTROS MEDIOS</h2>
     </div>
 
-    <div class="media-new__grid">
+    <div class="media-new__grid" id="mediaRail">
       <button class="media-card" type="button" data-modal="carteleras">
         <img src="assets/medio-carteleras.jpg" alt="Carteleras espectaculares" />
         <span class="media-card__badge" aria-hidden="true">
@@ -196,7 +196,7 @@
       </button>
 
       <button class="media-card" type="button" data-modal="btl">
-        <img src="assets/medio-btl.jpg" alt="Activaciones BTL" />
+        <img src="assets/activacion.png" alt="Activaciones BTL" />
         <span class="media-card__badge" aria-hidden="true">
           <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
         </span>
@@ -212,7 +212,7 @@
       </button>
 
       <button class="media-card" type="button" data-modal="impresion">
-        <img src="assets/medio-impresion.jpg" alt="Impresión digital y offset" />
+        <img src="assets/impresion.png" alt="Impresión digital y offset" />
         <span class="media-card__badge" aria-hidden="true">
           <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
         </span>
@@ -225,6 +225,16 @@
           <span class="media-card__more" data-i18n="mediaMore">Ver más información →</span>
           </div>
         </div>
+      </button>
+    </div>
+
+    <div class="media-rail-nav" id="mediaRailNav">
+      <button class="media-rail-arrow" type="button" id="mediaRailPrev" aria-label="Medio anterior">
+        <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12" /><polyline points="12 5 5 12 12 19" /></svg>
+      </button>
+
+      <button class="media-rail-arrow" type="button" id="mediaRailNext" aria-label="Siguiente medio">
+        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
       </button>
     </div>
 
@@ -509,6 +519,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=8"></script>
 </body>
 </html>

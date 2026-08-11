@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=2" />
 </head>
 
 <body>
@@ -37,7 +37,6 @@
   <main>
     <!-- HERO -->
     <section class="hero" id="inicio">
-      <!-- Cambia esta imagen después por: assets/hero.jpg -->
       <div class="hero__bg">
         <video
   class="hero__video"
@@ -58,10 +57,6 @@
         <h1 data-i18n-html="heroTitle">
           Convierte cada<br />rincón en tu <em>escaparate</em>
         </h1>
-
-        <p class="hero__text" data-i18n="heroText">
-          Impacto que atrae todas las miradas. Llevamos tu marca a los mejores espacios de la ciudad con presencia que no se puede ignorar.
-        </p>
 
         <div class="hero__actions">
           <a href="#medios" class="btn btn--light" data-i18n="heroPrimary">Ver nuestros medios</a>
@@ -88,25 +83,20 @@
           <p class="section-tag" data-i18n="aboutTag">Nosotros</p>
 
           <h2 data-i18n-html="aboutTitle">
-            Especialistas en <em>Out of Home</em>
+            Especialistas<br /><em>Out of Home</em>
           </h2>
 
           <p data-i18n="aboutTextOne">
-            Una empresa de publicidad especializada en el desarrollo de proyectos OOH, fundada hace 8 años con más de 35 años de experiencia desarrollando campañas por parte de nuestros socios.
+            Empresa de publicidad especializada en el desarrollo de proyectos OOH, fundada hace 10 años con más de 38 años de experiencia desarrollando proyectos en medios exteriores.
           </p>
 
           <p data-i18n="aboutTextTwo">
-            Ubicamos tu marca en los espacios estratégicos de mayor impacto: autopistas, centros comerciales, transporte urbano y espacios digitales en exteriores.
+            Estrategias basadas en datos y resultados tangibles.
           </p>
 
           <div class="stats">
             <article class="stat">
-              <strong>8</strong>
-              <span data-i18n="statOne">Años en el mercado</span>
-            </article>
-
-            <article class="stat">
-              <strong>35+</strong>
+              <strong>38+</strong>
               <span data-i18n="statTwo">Años de experiencia</span>
             </article>
 
@@ -141,7 +131,7 @@
     </div>
 
     <div class="media-new__grid">
-      <button class="media-card" type="button">
+      <button class="media-card" type="button" data-modal="carteleras">
         <img src="assets/medio-carteleras.jpg" alt="Carteleras espectaculares" />
         <div class="media-card__info">
           <h3 data-i18n="mediaOneTitle">Carteleras</h3>
@@ -151,7 +141,7 @@
         </div>
       </button>
 
-      <button class="media-card" type="button">
+      <button class="media-card" type="button" data-modal="mupis">
         <img src="assets/medio-mupis.jpg" alt="Mupis y centros comerciales" />
         <div class="media-card__info">
           <h3 data-i18n="mediaTwoTitle">Mupis</h3>
@@ -161,7 +151,7 @@
         </div>
       </button>
 
-      <button class="media-card" type="button">
+      <button class="media-card" type="button" data-modal="pantallas">
         <img src="assets/medio-pantallas.jpg" alt="Pantallas digitales" />
         <div class="media-card__info">
           <h3 data-i18n="mediaThreeTitle">Pantallas Digitales</h3>
@@ -171,7 +161,7 @@
         </div>
       </button>
 
-      <button class="media-card" type="button">
+      <button class="media-card" type="button" data-modal="transporte">
         <img src="assets/medio-transporte.png" alt="Medios de transporte urbano" />
         <div class="media-card__info">
           <h3 data-i18n="mediaFourTitle">Transporte Urbano</h3>
@@ -181,24 +171,142 @@
         </div>
       </button>
 
-      <button class="media-card" type="button">
-        <img src="assets/medio-movil.jpg" alt="Publicidad móvil" />
+      <button class="media-card" type="button" data-modal="btl">
+        <img src="assets/medio-btl.jpg" alt="Activaciones BTL" />
         <div class="media-card__info">
-          <h3 data-i18n="mediaFiveTitle">Publicidad Móvil</h3>
+          <h3 data-i18n="mediaFiveTitle">Activaciones BTL</h3>
           <p data-i18n="mediaFiveText">
-            Publicidad móvil para extender el alcance de tus campañas.
+            Volanteo, publiandantes, loneros y activaciones en punto de venta.
+          </p>
+        </div>
+      </button>
+
+      <button class="media-card" type="button" data-modal="impresion">
+        <img src="assets/medio-impresion.jpg" alt="Impresión digital y offset" />
+        <div class="media-card__info">
+          <h3 data-i18n="mediaSixTitle">Impresión Digital y Offset</h3>
+          <p data-i18n="mediaSixText">
+            Gran formato, rígidos, encuadernación y acabado de alto volumen.
           </p>
         </div>
       </button>
     </div>
 
     <div class="media-click-hint">
-      
       <p data-i18n="mediaClick">Haz clic para ver más información</p>
     </div>
   </div>
 </section>
-   
+
+<!-- MODAL DE MEDIOS -->
+<div class="media-modal" id="mediaModal" hidden>
+  <div class="media-modal__backdrop" data-close-modal></div>
+
+  <div class="media-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="mediaModalTitle">
+    <button class="media-modal__close" type="button" data-close-modal aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <line x1="6" y1="6" x2="18" y2="18" />
+        <line x1="18" y1="6" x2="6" y2="18" />
+      </svg>
+    </button>
+
+    <div class="media-modal__scroll" id="mediaModalTitle">
+
+      <article class="media-panel" data-panel="carteleras" hidden>
+        <h3 data-i18n="panelCartelerasTitle">Carteleras</h3>
+        <div class="media-panel__body" data-i18n-html="panelCartelerasBody">
+          <p>Presencia de gran formato en los puntos de mayor afluencia de la ciudad.</p>
+          <ul>
+            <li>Carteleras espectaculares</li>
+            <li>Vallas</li>
+            <li>Parabuses</li>
+            <li>Puentes peatonales</li>
+            <li>Muros y bardas</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="media-panel" data-panel="mupis" hidden>
+        <h3 data-i18n="panelMupisTitle">Mupis</h3>
+        <div class="media-panel__body" data-i18n-html="panelMupisBody">
+          <p>Formatos a nivel de calle y en interiores, cerca del momento de compra.</p>
+          <ul>
+            <li>Mupis en vía pública</li>
+            <li>Publicidad en centros comerciales</li>
+            <li>Posters y carteles</li>
+            <li>Espacios en aeropuertos y plazas</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="media-panel" data-panel="pantallas" hidden>
+        <h3 data-i18n="panelPantallasTitle">Pantallas Digitales</h3>
+        <div class="media-panel__body" data-i18n-html="panelPantallasBody">
+          <p>Contenido dinámico, con rotación programada y cambios de mensaje en el momento.</p>
+          <ul>
+            <li>Pantallas LED de gran formato</li>
+            <li>Circuitos digitales en centros comerciales</li>
+            <li>Pantallas en interiores y corporativos</li>
+            <li>Contenido en video y animación</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="media-panel" data-panel="transporte" hidden>
+        <h3 data-i18n="panelTransporteTitle">Transporte Urbano</h3>
+        <div class="media-panel__body" data-i18n-html="panelTransporteBody">
+          <p>Tu marca circulando por toda la ciudad, con cobertura de ruta completa.</p>
+          <ul>
+            <li>Autobuses y microbuses</li>
+            <li>Metro y transporte masivo</li>
+            <li>Taxis y unidades de reparto</li>
+            <li>Estaciones y andenes</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="media-panel" data-panel="btl" hidden>
+        <h3 data-i18n="panelBtlTitle">Activaciones BTL</h3>
+        <div class="media-panel__body" data-i18n-html="panelBtlBody">
+          <p>Contacto directo con tu público, en la calle y en el punto de venta.</p>
+          <ul>
+            <li>Activaciones BTL</li>
+            <li>Volanteo</li>
+            <li>Publiandantes</li>
+            <li>Loneros</li>
+            <li>Botargas, sampling y demostraciones</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="media-panel" data-panel="impresion" hidden>
+        <h3 data-i18n="panelImpresionTitle">Impresión Digital y Offset</h3>
+        <div class="media-panel__body" data-i18n-html="panelImpresionBody">
+          <h4>Impresión en offset</h4>
+          <p>Contamos con experiencia en diseño e impresión de alto volumen, encuadernación y acabado.</p>
+          <p>Manejamos papeles desde 60 gramos hasta 24 puntos (couché, bond, diario, revolución, adhesivos, caple, sulfatadas, polypap, entre otros), además realizamos impresión sobre papel especial grado alimenticio.</p>
+          <ul>
+            <li>Papeles especiales grado alimenticio</li>
+            <li>Etiquetas adhesivas</li>
+            <li>Libros, manuales y libretas pasta dura</li>
+            <li>Revistas, catálogos y flyers</li>
+            <li>Folletería, posters y calendarios</li>
+            <li>Cajas, empaque y papelería</li>
+          </ul>
+
+          <h4>Impresión digital</h4>
+          <ul>
+            <li>Impresión digital en alta resolución, gran formato y rígidos</li>
+            <li>Lona plastificada, lona mesh, vinil autoadherible, vinil electrostático, coroplast, foam board, trovicel, estireno, etc.</li>
+            <li>Empaque y apoyo en la distribución en toda la República Mexicana</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</div>
+
     <!-- STATEMENT -->
     <section class="statement section">
       <div class="container statement__inner">
@@ -315,7 +423,8 @@
           <option data-i18n="optionMalls">Centros comerciales</option>
           <option data-i18n="optionDigitalScreens">Pantallas digitales</option>
           <option data-i18n="optionUrbanTransport">Transporte urbano</option>
-          <option data-i18n="optionMobileAdvertising">Publicidad móvil</option>
+          <option data-i18n="optionBtl">Activaciones BTL</option>
+          <option data-i18n="optionPrinting">Impresión digital y offset</option>
           <option data-i18n="formIntegral">Campaña integral</option>
         </select>
       </label>
@@ -358,6 +467,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>

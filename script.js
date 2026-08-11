@@ -181,7 +181,8 @@ const translations = {
     mediaSixText:
       "Gran formato, rígidos, encuadernación y acabado de alto volumen.",
 
-    mediaClick: "Haz clic para ver más información",
+    mediaMore: "Ver más información →",
+    mediaClick: "Haz clic en cada medio para ver el detalle completo",
 
     panelCartelerasTitle: "Carteleras",
     panelCartelerasBody: `
@@ -344,7 +345,8 @@ const translations = {
     mediaSixText:
       "Large format, rigid substrates, binding and high-volume finishing.",
 
-    mediaClick: "Click to see more information",
+    mediaMore: "See more information →",
+    mediaClick: "Click on each medium to see the full detail",
 
     panelCartelerasTitle: "Billboards",
     panelCartelerasBody: `

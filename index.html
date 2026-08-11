@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=9" />
+  <link rel="stylesheet" href="style.css?v=10" />
 </head>
 
 <body>
@@ -226,6 +226,22 @@
           </div>
         </div>
       </button>
+
+      <button class="media-card media-card--wide" type="button" data-modal="digital">
+        <img src="assets/medio-web.jpg" alt="Páginas web y tiendas en línea" />
+        <span class="media-card__badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+        </span>
+        <div class="media-card__info">
+          <h3 data-i18n="mediaSevenTitle">Páginas Web y Tiendas en Línea</h3>
+          <div class="media-card__detail">
+          <p data-i18n="mediaSevenText">
+            Desarrollo de sitios web y comercio electrónico para llevar tu marca al entorno digital.
+          </p>
+          <span class="media-card__more" data-i18n="mediaMore">Ver más información →</span>
+          </div>
+        </div>
+      </button>
     </div>
 
     <div class="media-rail-nav" id="mediaRailNav">
@@ -345,6 +361,22 @@
             <li>Impresión digital en alta resolución, gran formato y rígidos</li>
             <li>Lona plastificada, lona mesh, vinil autoadherible, vinil electrostático, coroplast, foam board, trovicel, estireno, etc.</li>
             <li>Empaque y apoyo en la distribución en toda la República Mexicana</li>
+          </ul>
+        </div>
+      </article>
+
+
+      <article class="media-panel" data-panel="digital" hidden>
+        <h3 data-i18n="panelDigitalTitle">Páginas Web y Tiendas en Línea</h3>
+        <div class="media-panel__body" data-i18n-html="panelDigitalBody">
+          <p>Complementamos tu presencia en exteriores con una presencia digital a la altura de tu marca.</p>
+          <ul>
+            <li>Sitios web corporativos y de marca</li>
+            <li>Tiendas en línea y comercio electrónico</li>
+            <li>Landing pages para campañas</li>
+            <li>Diseño adaptado a celular y computadora</li>
+            <li>Catálogos digitales de productos</li>
+            <li>Integración con redes sociales</li>
           </ul>
         </div>
       </article>
@@ -471,6 +503,7 @@
           <option value="transporte" data-i18n="optionUrbanTransport">Transporte urbano</option>
           <option value="btl" data-i18n="optionBtl">Activaciones BTL</option>
           <option value="impresion" data-i18n="optionPrinting">Impresión digital y offset</option>
+          <option value="digital" data-i18n="optionWeb">Páginas web y tiendas en línea</option>
           <option value="integral" data-i18n="formIntegral">Campaña integral</option>
           <option value="otro" data-i18n="optionOther">Otro</option>
         </select>
@@ -508,18 +541,17 @@
       </div>
 
       <div class="footer__social">
+        <a href="#" aria-label="Instagram" data-i18n="instagramLabel">Instagram</a>
+        <a href="#" aria-label="Facebook" data-i18n="facebookLabel">Facebook</a>
         <a href="#" aria-label="LinkedIn" data-i18n="linkedinLabel">LinkedIn</a>
       </div>
 
       <p class="footer__copy" data-i18n="footerCopy">
         © 2026 Aleph Medios. Todos los derechos reservados.
       </p>
-      <a href="#" class="footer-credit-logo" aria-label="Diseñado por tu marca">
-        <img src="assets/1.png" alt="Logo de mi marca" />
-      </a>
     </div>
   </footer>
 
-  <script src="script.js?v=9"></script>
+  <script src="script.js?v=10"></script>
 </body>
 </html>

@@ -646,6 +646,44 @@ p {
   }
 }
 
+.media-rail-nav {
+  display: none;
+}
+
+.media-rail-arrow {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.media-rail-arrow:active {
+  border-color: var(--blue-light);
+  background: rgba(47, 107, 170, 0.28);
+}
+
+.media-rail-arrow[disabled] {
+  opacity: 0.28;
+  cursor: default;
+}
+
+.media-rail-arrow svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
 .media-click-hint {
   display: flex;
   flex-direction: column;
@@ -869,14 +907,41 @@ p {
     margin-bottom: 38px;
   }
 
+  /* En celular las tarjetas se recorren en riel horizontal */
   .media-new__grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    display: flex;
+    grid-template-columns: none;
+    gap: 16px;
+    margin-inline: -24px;
+    padding-inline: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 24px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .media-new__grid::-webkit-scrollbar {
+    display: none;
   }
 
   .media-card {
-    min-height: 360px;
-    border-radius: 46px;
+    flex: 0 0 82%;
+    min-height: 400px;
+    border-radius: 42px;
+    scroll-snap-align: start;
+  }
+
+  .media-rail-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 26px;
+  }
+
+  .media-click-hint {
+    margin-top: 18px;
   }
 
   .media-click-hint p {
@@ -1449,6 +1514,17 @@ a.contact-item__value:hover {
 
   h1 {
     font-size: clamp(30px, 8.8vw, 40px);
+  }
+
+  .media-new__grid {
+    margin-inline: -16px;
+    padding-inline: 16px;
+    scroll-padding-inline: 16px;
+  }
+
+  .media-card {
+    flex: 0 0 85%;
+    min-height: 380px;
   }
 
   .hero {

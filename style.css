@@ -1555,3 +1555,39 @@ a.contact-item__value:hover {
     object-position: center center;
   }
 }
+
+/* LOGO DE MI MARCA EN FOOTER */
+.footer {
+  position: relative;
+}
+
+.footer-credit-logo {
+  position: absolute;
+  right: 28px;
+  bottom: 18px;
+  display: block;
+  opacity: 0.55;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer-credit-logo:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.footer-credit-logo img {
+  width: 58px;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .footer-credit-logo {
+    right: 18px;
+    bottom: 16px;
+  }
+
+  .footer-credit-logo img {
+    width: 44px;
+  }
+}

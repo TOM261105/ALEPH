@@ -331,6 +331,7 @@ const translations = {
       "Cuéntanos tu proyecto y te daremos la solución OOH ideal para tu marca. Nuestro equipo está listo para crear el impacto que necesitas.",
 
     locationLabel: "Ubicación",
+    officeLabel: "Oficina",
     mobileLabel: "Celular",
     websiteLabel: "Sitio web",
 
@@ -603,10 +604,13 @@ if (languageToggle) {
 // ===============================
 // FORMULARIO
 // ===============================
-const contactForm = document.querySelector(".contact-form");
+const contactForm = document.getElementById("contactForm");
+const formSubmit = document.getElementById("formSubmit");
+const formStatus = document.getElementById("formStatus");
 const mediaTypeSelect = document.getElementById("mediaTypeSelect");
 const otherField = document.getElementById("formOther");
 
+// Muestra u oculta el campo de texto libre cuando se elige "Otro"
 function toggleOtherField() {
   if (!mediaTypeSelect || !otherField) return;
   otherField.hidden = mediaTypeSelect.value !== "otro";
@@ -617,19 +621,59 @@ if (mediaTypeSelect) {
   toggleOtherField();
 }
 
+const formMessages = {
+  es: {
+    enviando: "Enviando...",
+    exito: "Gracias. Tu mensaje fue enviado correctamente.",
+    error: "No se pudo enviar el mensaje. Intenta de nuevo o escríbenos a fernando@alephmedios.com",
+    boton: "Enviar mensaje →",
+  },
+  en: {
+    enviando: "Sending...",
+    exito: "Thank you. Your message was sent successfully.",
+    error: "The message could not be sent. Please try again or write to fernando@alephmedios.com",
+    boton: "Send message →",
+  },
+};
+
+function mostrarEstado(tipo) {
+  if (!formStatus) return;
+
+  formStatus.textContent = formMessages[currentLanguage][tipo];
+  formStatus.className = "form-status is-" + (tipo === "exito" ? "ok" : "error");
+  formStatus.hidden = false;
+}
+
 if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const message =
-      currentLanguage === "es"
-        ? "Gracias. Tu mensaje fue registrado correctamente."
-        : "Thank you. Your message was submitted successfully.";
+    const textos = formMessages[currentLanguage];
 
-    alert(message);
+    formSubmit.disabled = true;
+    formSubmit.textContent = textos.enviando;
+    if (formStatus) formStatus.hidden = true;
 
-    contactForm.reset();
-    toggleOtherField();
+    try {
+      const respuesta = await fetch(contactForm.action, {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: { Accept: "application/json" },
+      });
+
+      if (respuesta.ok) {
+        mostrarEstado("exito");
+        contactForm.reset();
+        toggleOtherField();
+      } else {
+        mostrarEstado("error");
+      }
+    } catch (error) {
+      mostrarEstado("error");
+    }
+
+    formSubmit.disabled = false;
+    formSubmit.textContent = textos.boton;
   });
 }
 

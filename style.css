@@ -1229,6 +1229,35 @@ a.contact-item__value:hover {
   transform: translateY(-2px);
 }
 
+.form-submit[disabled] {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+}
+
+.form-status {
+  border-radius: 4px;
+  padding: 13px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.form-status[hidden] {
+  display: none;
+}
+
+.form-status.is-ok {
+  border: 1px solid rgba(91, 159, 212, 0.45);
+  background: rgba(47, 107, 170, 0.18);
+  color: var(--white);
+}
+
+.form-status.is-error {
+  border: 1px solid rgba(224, 122, 122, 0.45);
+  background: rgba(160, 60, 60, 0.18);
+  color: #ffd9d9;
+}
+
 /* FOOTER */
 .footer {
   border-top: 1px solid var(--border-light);

@@ -331,7 +331,6 @@ const translations = {
       "Cuéntanos tu proyecto y te daremos la solución OOH ideal para tu marca. Nuestro equipo está listo para crear el impacto que necesitas.",
 
     locationLabel: "Ubicación",
-    officeLabel: "Oficina",
     mobileLabel: "Celular",
     websiteLabel: "Sitio web",
 

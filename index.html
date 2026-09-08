@@ -9,16 +9,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=14" />
+  <link rel="stylesheet" href="style.css?v=15" />
 </head>
 
 <body>
   <!-- NAV -->
   <header class="site-header" id="siteHeader">
     <nav class="nav" aria-label="Navegación principal">
-     <a href="#inicio" class="brand brand--image" aria-label="Aleph Medios inicio">
+      <a href="#inicio" class="brand brand--image" aria-label="Aleph Medios inicio">
         <img src="assets/logoaleph.png" alt="Aleph Medios" class="brand__logo" />
-     </a>
+      </a>
 
       <div class="nav__right">
         <div class="nav__links">
@@ -39,16 +39,16 @@
     <section class="hero" id="inicio">
       <div class="hero__bg">
         <video
-  class="hero__video"
-  autoplay
-  muted
-  loop
-  playsinline
-  preload="auto"
->
-<source src="assets/hero-video.mp4" type="video/mp4" />
-  Tu navegador no soporta video HTML5.
-</video>
+          class="hero__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+        >
+          <source src="assets/hero-video.mp4" type="video/mp4" />
+          Tu navegador no soporta video HTML5.
+        </video>
       </div>
 
       <div class="container hero__content">
@@ -107,283 +107,280 @@
           </div>
         </div>
 
-       <div class="about__images reveal-right">
-  <video
-    class="about__video-main"
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="auto"
-  >
-    <source src="assets/Cartelera_video.mp4" type="video/mp4" />
-    Tu navegador no soporta video HTML5.
-  </video>
-</div>
+        <div class="about__images reveal-right">
+          <video
+            class="about__video-main"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+          >
+            <source src="assets/Cartelera_video.mp4" type="video/mp4" />
+            Tu navegador no soporta video HTML5.
+          </video>
+        </div>
       </div>
     </section>
 
- <!-- MEDIOS -->
-<section class="media section" id="medios">
-  <div class="container">
-    <div class="media-new__header reveal">
-      <h2 data-i18n="mediaTitleNew">NUESTROS MEDIOS</h2>
+    <!-- MEDIOS -->
+    <section class="media section" id="medios">
+      <div class="container">
+        <div class="media-new__header reveal">
+          <h2 data-i18n="mediaTitleNew">NUESTROS MEDIOS</h2>
+        </div>
+
+        <div class="media-new__grid" id="mediaRail">
+          <button class="media-card" type="button" data-modal="carteleras">
+            <img src="assets/medio-carteleras.jpg" alt="Carteleras espectaculares" />
+            <span class="media-card__badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+            </span>
+            <div class="media-card__info">
+              <h3 data-i18n="mediaOneTitle">Carteleras</h3>
+              <div class="media-card__detail">
+                <p data-i18n="mediaOneText">
+                  Carteleras espectaculares, vallas, parabuses, puentes, muros, etc.
+                </p>
+                <span class="media-card__more" data-i18n="mediaMore">Ver más información →</span>
+              </div>
+            </div>
+          </button>
+
+          <button class="media-card" type="button" data-modal="mupis">
+            <img src="assets/medio-mupis.jpg" alt="Mupis y centros comerciales" />
+            <span class="media-card__badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+            </span>
+            <div class="media-card__info">
+              <h3 data-i18n="mediaTwoTitle">Mupis</h3>
+              <div class="media-card__detail">
+                <p data-i18n="mediaTwoText">
+                  Mupis, publicidad en centros comerciales, posters, etc.
+                </p>
+                <span class="media-card__more" data-i18n="mediaMore">Ver más información →</span>
+              </div>
+            </div>
+          </button>
+
+          <button class="media-card" type="button" data-modal="pantallas">
+            <img src="assets/medio-pantallas.jpg" alt="Pantallas digitales" />
+            <span class="media-card__badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+            </span>
+            <div class="media-card__info">
+              <h3 data-i18n="mediaThreeTitle">Pantallas Digitales</h3>
+              <div class="media-card__detail">
+                <p data-i18n="mediaThreeText">
+                  Pantallas digitales para contenido dinámico y de alto impacto.
+                </p>
+                <span class="media-card__more" data-i18n="mediaMore">Ver más información →</span>
+              </div>
+            </div>
+          </button>
+
+          <button class="media-card" type="button" data-modal="transporte">
+            <img src="assets/medio-transporte.png" alt="Medios de transporte urbano" />
+            <span class="media-card__badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+            </span>
+            <div class="media-card__info">
+              <h3 data-i18n="mediaFourTitle">Transporte Urbano</h3>
+              <div class="media-card__detail">
+                <p data-i18n="mediaFourText">
+                  Medios de transporte urbano para llevar tu marca por toda la ciudad.
+                </p>
+                <span class="media-card__more" data-i18n="mediaMore">Ver más información →</span>
+              </div>
+            </div>
+          </button>
+
+          <button class="media-card" type="button" data-modal="btl">
+            <img src="assets/activacion.png" alt="Activaciones BTL" />
+            <span class="media-card__badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+            </span>
+            <div class="media-card__info">
+              <h3 data-i18n="mediaFiveTitle">Activaciones BTL</h3>
+              <div class="media-card__detail">
+                <p data-i18n="mediaFiveText">
+                  Volanteo, publiandantes, loneros y activaciones en punto de venta.
+                </p>
+                <span class="media-card__more" data-i18n="mediaMore">Ver más información →</span>
+              </div>
+            </div>
+          </button>
+
+          <button class="media-card" type="button" data-modal="impresion">
+            <img src="assets/impresion.png" alt="Impresión digital y offset" />
+            <span class="media-card__badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+            </span>
+            <div class="media-card__info">
+              <h3 data-i18n="mediaSixTitle">Impresión Digital y Offset</h3>
+              <div class="media-card__detail">
+                <p data-i18n="mediaSixText">
+                  Gran formato, rígidos, encuadernación y acabado de alto volumen.
+                </p>
+                <span class="media-card__more" data-i18n="mediaMore">Ver más información →</span>
+              </div>
+            </div>
+          </button>
+
+          <button class="media-card media-card--wide" type="button" data-modal="digital">
+            <img src="assets/medio-web.jpg" alt="Páginas web y tiendas en línea" />
+            <span class="media-card__badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+            </span>
+            <div class="media-card__info">
+              <h3 data-i18n="mediaSevenTitle">Páginas Web y Tiendas en Línea</h3>
+              <div class="media-card__detail">
+                <p data-i18n="mediaSevenText">
+                  Desarrollo de sitios web y comercio electrónico para llevar tu marca al entorno digital.
+                </p>
+                <span class="media-card__more" data-i18n="mediaMore">Ver más información →</span>
+              </div>
+            </div>
+          </button>
+        </div>
+
+        <div class="media-rail-nav" id="mediaRailNav">
+          <button class="media-rail-arrow" type="button" id="mediaRailPrev" aria-label="Medio anterior">
+            <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12" /><polyline points="12 5 5 12 12 19" /></svg>
+          </button>
+
+          <button class="media-rail-arrow" type="button" id="mediaRailNext" aria-label="Siguiente medio">
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+          </button>
+        </div>
+
+        <div class="media-click-hint">
+          <p data-i18n="mediaClick">Haz clic en cada medio para ver el detalle completo</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL DE MEDIOS -->
+    <div class="media-modal" id="mediaModal" hidden>
+      <div class="media-modal__backdrop" data-close-modal></div>
+
+      <div class="media-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="mediaModalTitle">
+        <button class="media-modal__close" type="button" data-close-modal aria-label="Cerrar">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <line x1="6" y1="6" x2="18" y2="18" />
+            <line x1="18" y1="6" x2="6" y2="18" />
+          </svg>
+        </button>
+
+        <div class="media-modal__scroll" id="mediaModalTitle">
+          <article class="media-panel" data-panel="carteleras" hidden>
+            <h3 data-i18n="panelCartelerasTitle">Carteleras</h3>
+            <div class="media-panel__body" data-i18n-html="panelCartelerasBody">
+              <p>Presencia de gran formato en los puntos de mayor afluencia de la ciudad.</p>
+              <ul>
+                <li>Carteleras espectaculares</li>
+                <li>Vallas</li>
+                <li>Parabuses</li>
+                <li>Puentes peatonales</li>
+                <li>Muros y bardas</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="media-panel" data-panel="mupis" hidden>
+            <h3 data-i18n="panelMupisTitle">Mupis</h3>
+            <div class="media-panel__body" data-i18n-html="panelMupisBody">
+              <p>Formatos a nivel de calle y en interiores, cerca del momento de compra.</p>
+              <ul>
+                <li>Mupis en vía pública</li>
+                <li>Publicidad en centros comerciales</li>
+                <li>Posters y carteles</li>
+                <li>Espacios en aeropuertos y plazas</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="media-panel" data-panel="pantallas" hidden>
+            <h3 data-i18n="panelPantallasTitle">Pantallas Digitales</h3>
+            <div class="media-panel__body" data-i18n-html="panelPantallasBody">
+              <p>Contenido dinámico, con rotación programada y cambios de mensaje en el momento.</p>
+              <ul>
+                <li>Pantallas LED de gran formato</li>
+                <li>Circuitos digitales en centros comerciales</li>
+                <li>Pantallas en interiores y corporativos</li>
+                <li>Contenido en video y animación</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="media-panel" data-panel="transporte" hidden>
+            <h3 data-i18n="panelTransporteTitle">Transporte Urbano</h3>
+            <div class="media-panel__body" data-i18n-html="panelTransporteBody">
+              <p>Tu marca circulando por toda la ciudad, con cobertura de ruta completa.</p>
+              <ul>
+                <li>Autobuses y microbuses</li>
+                <li>Metro y transporte masivo</li>
+                <li>Taxis y unidades de reparto</li>
+                <li>Estaciones y andenes</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="media-panel" data-panel="btl" hidden>
+            <h3 data-i18n="panelBtlTitle">Activaciones BTL</h3>
+            <div class="media-panel__body" data-i18n-html="panelBtlBody">
+              <p>Contacto directo con tu público, en la calle y en el punto de venta.</p>
+              <ul>
+                <li>Activaciones BTL</li>
+                <li>Volanteo</li>
+                <li>Publiandantes</li>
+                <li>Loneros</li>
+                <li>Botargas, sampling y demostraciones</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="media-panel" data-panel="impresion" hidden>
+            <h3 data-i18n="panelImpresionTitle">Impresión Digital y Offset</h3>
+            <div class="media-panel__body" data-i18n-html="panelImpresionBody">
+              <h4>Impresión en offset</h4>
+              <p>Contamos con experiencia en diseño e impresión de alto volumen, encuadernación y acabado.</p>
+              <p>Manejamos papeles desde 60 gramos hasta 24 puntos (couché, bond, diario, revolución, adhesivos, caple, sulfatadas, polypap, entre otros), además realizamos impresión sobre papel especial grado alimenticio.</p>
+              <ul>
+                <li>Papeles especiales grado alimenticio</li>
+                <li>Etiquetas adhesivas</li>
+                <li>Libros, manuales y libretas pasta dura</li>
+                <li>Revistas, catálogos y flyers</li>
+                <li>Folletería, posters y calendarios</li>
+                <li>Cajas, empaque y papelería</li>
+              </ul>
+
+              <h4>Impresión digital</h4>
+              <ul>
+                <li>Impresión digital en alta resolución, gran formato y rígidos</li>
+                <li>Lona plastificada, lona mesh, vinil autoadherible, vinil electrostático, coroplast, foam board, trovicel, estireno, etc.</li>
+                <li>Empaque y apoyo en la distribución en toda la República Mexicana</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="media-panel" data-panel="digital" hidden>
+            <h3 data-i18n="panelDigitalTitle">Páginas Web y Tiendas en Línea</h3>
+            <div class="media-panel__body" data-i18n-html="panelDigitalBody">
+              <p>Complementamos tu presencia en exteriores con una presencia digital a la altura de tu marca.</p>
+              <ul>
+                <li>Sitios web corporativos y de marca</li>
+                <li>Tiendas en línea y comercio electrónico</li>
+                <li>Landing pages para campañas</li>
+                <li>Diseño adaptado a celular y computadora</li>
+                <li>Catálogos digitales de productos</li>
+                <li>Integración con redes sociales</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
     </div>
-
-    <div class="media-new__grid" id="mediaRail">
-      <button class="media-card" type="button" data-modal="carteleras">
-        <img src="assets/medio-carteleras.jpg" alt="Carteleras espectaculares" />
-        <span class="media-card__badge" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
-        </span>
-        <div class="media-card__info">
-          <h3 data-i18n="mediaOneTitle">Carteleras</h3>
-          <div class="media-card__detail">
-          <p data-i18n="mediaOneText">
-            Carteleras espectaculares, vallas, parabuses, puentes, muros, etc.
-          </p>
-          <span class="media-card__more" data-i18n="mediaMore">Ver más información →</span>
-          </div>
-        </div>
-      </button>
-
-      <button class="media-card" type="button" data-modal="mupis">
-        <img src="assets/medio-mupis.jpg" alt="Mupis y centros comerciales" />
-        <span class="media-card__badge" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
-        </span>
-        <div class="media-card__info">
-          <h3 data-i18n="mediaTwoTitle">Mupis</h3>
-          <div class="media-card__detail">
-          <p data-i18n="mediaTwoText">
-            Mupis, publicidad en centros comerciales, posters, etc.
-          </p>
-          <span class="media-card__more" data-i18n="mediaMore">Ver más información →</span>
-          </div>
-        </div>
-      </button>
-
-      <button class="media-card" type="button" data-modal="pantallas">
-        <img src="assets/medio-pantallas.jpg" alt="Pantallas digitales" />
-        <span class="media-card__badge" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
-        </span>
-        <div class="media-card__info">
-          <h3 data-i18n="mediaThreeTitle">Pantallas Digitales</h3>
-          <div class="media-card__detail">
-          <p data-i18n="mediaThreeText">
-            Pantallas digitales para contenido dinámico y de alto impacto.
-          </p>
-          <span class="media-card__more" data-i18n="mediaMore">Ver más información →</span>
-          </div>
-        </div>
-      </button>
-
-      <button class="media-card" type="button" data-modal="transporte">
-        <img src="assets/medio-transporte.png" alt="Medios de transporte urbano" />
-        <span class="media-card__badge" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
-        </span>
-        <div class="media-card__info">
-          <h3 data-i18n="mediaFourTitle">Transporte Urbano</h3>
-          <div class="media-card__detail">
-          <p data-i18n="mediaFourText">
-            Medios de transporte urbano para llevar tu marca por toda la ciudad.
-          </p>
-          <span class="media-card__more" data-i18n="mediaMore">Ver más información →</span>
-          </div>
-        </div>
-      </button>
-
-      <button class="media-card" type="button" data-modal="btl">
-        <img src="assets/activacion.png" alt="Activaciones BTL" />
-        <span class="media-card__badge" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
-        </span>
-        <div class="media-card__info">
-          <h3 data-i18n="mediaFiveTitle">Activaciones BTL</h3>
-          <div class="media-card__detail">
-          <p data-i18n="mediaFiveText">
-            Volanteo, publiandantes, loneros y activaciones en punto de venta.
-          </p>
-          <span class="media-card__more" data-i18n="mediaMore">Ver más información →</span>
-          </div>
-        </div>
-      </button>
-
-      <button class="media-card" type="button" data-modal="impresion">
-        <img src="assets/impresion.png" alt="Impresión digital y offset" />
-        <span class="media-card__badge" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
-        </span>
-        <div class="media-card__info">
-          <h3 data-i18n="mediaSixTitle">Impresión Digital y Offset</h3>
-          <div class="media-card__detail">
-          <p data-i18n="mediaSixText">
-            Gran formato, rígidos, encuadernación y acabado de alto volumen.
-          </p>
-          <span class="media-card__more" data-i18n="mediaMore">Ver más información →</span>
-          </div>
-        </div>
-      </button>
-
-      <button class="media-card media-card--wide" type="button" data-modal="digital">
-        <img src="assets/medio-web.jpg" alt="Páginas web y tiendas en línea" />
-        <span class="media-card__badge" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
-        </span>
-        <div class="media-card__info">
-          <h3 data-i18n="mediaSevenTitle">Páginas Web y Tiendas en Línea</h3>
-          <div class="media-card__detail">
-          <p data-i18n="mediaSevenText">
-            Desarrollo de sitios web y comercio electrónico para llevar tu marca al entorno digital.
-          </p>
-          <span class="media-card__more" data-i18n="mediaMore">Ver más información →</span>
-          </div>
-        </div>
-      </button>
-    </div>
-
-    <div class="media-rail-nav" id="mediaRailNav">
-      <button class="media-rail-arrow" type="button" id="mediaRailPrev" aria-label="Medio anterior">
-        <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12" /><polyline points="12 5 5 12 12 19" /></svg>
-      </button>
-
-      <button class="media-rail-arrow" type="button" id="mediaRailNext" aria-label="Siguiente medio">
-        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
-      </button>
-    </div>
-
-    <div class="media-click-hint">
-      <p data-i18n="mediaClick">Haz clic en cada medio para ver el detalle completo</p>
-    </div>
-  </div>
-</section>
-
-<!-- MODAL DE MEDIOS -->
-<div class="media-modal" id="mediaModal" hidden>
-  <div class="media-modal__backdrop" data-close-modal></div>
-
-  <div class="media-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="mediaModalTitle">
-    <button class="media-modal__close" type="button" data-close-modal aria-label="Cerrar">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <line x1="6" y1="6" x2="18" y2="18" />
-        <line x1="18" y1="6" x2="6" y2="18" />
-      </svg>
-    </button>
-
-    <div class="media-modal__scroll" id="mediaModalTitle">
-
-      <article class="media-panel" data-panel="carteleras" hidden>
-        <h3 data-i18n="panelCartelerasTitle">Carteleras</h3>
-        <div class="media-panel__body" data-i18n-html="panelCartelerasBody">
-          <p>Presencia de gran formato en los puntos de mayor afluencia de la ciudad.</p>
-          <ul>
-            <li>Carteleras espectaculares</li>
-            <li>Vallas</li>
-            <li>Parabuses</li>
-            <li>Puentes peatonales</li>
-            <li>Muros y bardas</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="media-panel" data-panel="mupis" hidden>
-        <h3 data-i18n="panelMupisTitle">Mupis</h3>
-        <div class="media-panel__body" data-i18n-html="panelMupisBody">
-          <p>Formatos a nivel de calle y en interiores, cerca del momento de compra.</p>
-          <ul>
-            <li>Mupis en vía pública</li>
-            <li>Publicidad en centros comerciales</li>
-            <li>Posters y carteles</li>
-            <li>Espacios en aeropuertos y plazas</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="media-panel" data-panel="pantallas" hidden>
-        <h3 data-i18n="panelPantallasTitle">Pantallas Digitales</h3>
-        <div class="media-panel__body" data-i18n-html="panelPantallasBody">
-          <p>Contenido dinámico, con rotación programada y cambios de mensaje en el momento.</p>
-          <ul>
-            <li>Pantallas LED de gran formato</li>
-            <li>Circuitos digitales en centros comerciales</li>
-            <li>Pantallas en interiores y corporativos</li>
-            <li>Contenido en video y animación</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="media-panel" data-panel="transporte" hidden>
-        <h3 data-i18n="panelTransporteTitle">Transporte Urbano</h3>
-        <div class="media-panel__body" data-i18n-html="panelTransporteBody">
-          <p>Tu marca circulando por toda la ciudad, con cobertura de ruta completa.</p>
-          <ul>
-            <li>Autobuses y microbuses</li>
-            <li>Metro y transporte masivo</li>
-            <li>Taxis y unidades de reparto</li>
-            <li>Estaciones y andenes</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="media-panel" data-panel="btl" hidden>
-        <h3 data-i18n="panelBtlTitle">Activaciones BTL</h3>
-        <div class="media-panel__body" data-i18n-html="panelBtlBody">
-          <p>Contacto directo con tu público, en la calle y en el punto de venta.</p>
-          <ul>
-            <li>Activaciones BTL</li>
-            <li>Volanteo</li>
-            <li>Publiandantes</li>
-            <li>Loneros</li>
-            <li>Botargas, sampling y demostraciones</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="media-panel" data-panel="impresion" hidden>
-        <h3 data-i18n="panelImpresionTitle">Impresión Digital y Offset</h3>
-        <div class="media-panel__body" data-i18n-html="panelImpresionBody">
-          <h4>Impresión en offset</h4>
-          <p>Contamos con experiencia en diseño e impresión de alto volumen, encuadernación y acabado.</p>
-          <p>Manejamos papeles desde 60 gramos hasta 24 puntos (couché, bond, diario, revolución, adhesivos, caple, sulfatadas, polypap, entre otros), además realizamos impresión sobre papel especial grado alimenticio.</p>
-          <ul>
-            <li>Papeles especiales grado alimenticio</li>
-            <li>Etiquetas adhesivas</li>
-            <li>Libros, manuales y libretas pasta dura</li>
-            <li>Revistas, catálogos y flyers</li>
-            <li>Folletería, posters y calendarios</li>
-            <li>Cajas, empaque y papelería</li>
-          </ul>
-
-          <h4>Impresión digital</h4>
-          <ul>
-            <li>Impresión digital en alta resolución, gran formato y rígidos</li>
-            <li>Lona plastificada, lona mesh, vinil autoadherible, vinil electrostático, coroplast, foam board, trovicel, estireno, etc.</li>
-            <li>Empaque y apoyo en la distribución en toda la República Mexicana</li>
-          </ul>
-        </div>
-      </article>
-
-
-      <article class="media-panel" data-panel="digital" hidden>
-        <h3 data-i18n="panelDigitalTitle">Páginas Web y Tiendas en Línea</h3>
-        <div class="media-panel__body" data-i18n-html="panelDigitalBody">
-          <p>Complementamos tu presencia en exteriores con una presencia digital a la altura de tu marca.</p>
-          <ul>
-            <li>Sitios web corporativos y de marca</li>
-            <li>Tiendas en línea y comercio electrónico</li>
-            <li>Landing pages para campañas</li>
-            <li>Diseño adaptado a celular y computadora</li>
-            <li>Catálogos digitales de productos</li>
-            <li>Integración con redes sociales</li>
-          </ul>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</div>
 
     <!-- STATEMENT -->
     <section class="statement section">
@@ -401,125 +398,121 @@
       </div>
     </section>
 
-<!-- CONTACTO -->
-<section class="contact section" id="contacto">
-  <div class="container contact__grid">
-    
-    <div class="contact__content reveal-left">
-      <p class="section-tag section-tag--light" data-i18n="contactTag">Contacto</p>
+    <!-- CONTACTO -->
+    <section class="contact section" id="contacto">
+      <div class="container contact__grid">
+        <div class="contact__content reveal-left">
+          <p class="section-tag section-tag--light" data-i18n="contactTag">Contacto</p>
 
-      <h2 data-i18n-html="contactTitle">Hablemos de<br />tu campaña</h2>
+          <h2 data-i18n-html="contactTitle">Hablemos de<br />tu campaña</h2>
 
-      <p data-i18n="contactText">
-        Cuéntanos tu proyecto y te daremos la solución OOH ideal para tu marca.
-        Nuestro equipo está listo para crear el impacto que necesitas.
-      </p>
-
-      <div class="contact-list">
-        <article class="contact-item">
-          <span class="contact-item__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 21.5s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z" /><circle cx="12" cy="10.5" r="2.5" /></svg>
-          </span>
-          <p>
-            <strong data-i18n="locationLabel">Ubicación</strong>
-            <a class="contact-item__value" href="https://maps.google.com/?q=Valle+de+Morelos+19,+El+Mirador,+Naucalpan,+53050" target="_blank" rel="noopener">
-              Valle de Morelos No. 19<br />
-              Col. El Mirador<br />
-              Naucalpan, Estado de México<br />
-              C.P. 53050
-            </a>
+          <p data-i18n="contactText">
+            Cuéntanos tu proyecto y te daremos la solución OOH ideal para tu marca.
+            Nuestro equipo está listo para crear el impacto que necesitas.
           </p>
-        </article>
 
-        <article class="contact-item">
-          <span class="contact-item__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.2" /><line x1="10.5" y1="18.5" x2="13.5" y2="18.5" /></svg>
-          </span>
-          <p>
-            <strong data-i18n="mobileLabel">Celular</strong>
-            <a class="contact-item__value" href="tel:+525554037859">55 5403 7859</a>
-          </p>
-        </article>
+          <div class="contact-list">
+            <article class="contact-item">
+              <span class="contact-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 21.5s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z" /><circle cx="12" cy="10.5" r="2.5" /></svg>
+              </span>
+              <p>
+                <strong data-i18n="locationLabel">Ubicación</strong>
+                <a class="contact-item__value" href="https://maps.google.com/?q=Valle+de+Morelos+19,+El+Mirador,+Naucalpan,+53050" target="_blank" rel="noopener">
+                  Valle de Morelos No. 19<br />
+                  Col. El Mirador<br />
+                  Naucalpan, Estado de México<br />
+                  C.P. 53050
+                </a>
+              </p>
+            </article>
 
-        <article class="contact-item">
-          <span class="contact-item__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3.6 6.6 8.4 5.9 8.4-5.9" /></svg>
-          </span>
-          <p>
-            <strong>Email</strong>
-            <a class="contact-item__value" href="mailto:fernando@alephmedios.com">fernando@alephmedios.com</a>
-          </p>
-        </article>
+            <article class="contact-item">
+              <span class="contact-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.2" /><line x1="10.5" y1="18.5" x2="13.5" y2="18.5" /></svg>
+              </span>
+              <p>
+                <strong data-i18n="mobileLabel">Celular</strong>
+                <a class="contact-item__value" href="tel:+525554037859">55 5403 7859</a>
+              </p>
+            </article>
 
-        <article class="contact-item">
-          <span class="contact-item__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><line x1="3.4" y1="9.2" x2="20.6" y2="9.2" /><line x1="3.4" y1="14.8" x2="20.6" y2="14.8" /><path d="M12 3c2.3 2.5 3.5 5.5 3.5 9s-1.2 6.5-3.5 9c-2.3-2.5-3.5-5.5-3.5-9S9.7 5.5 12 3Z" /></svg>
-          </span>
-          <p>
-            <strong data-i18n="websiteLabel">Sitio web</strong>
-            <a class="contact-item__value" href="https://www.alephmedios.com" target="_blank" rel="noopener">www.alephmedios.com</a>
-          </p>
-        </article>
+            <article class="contact-item">
+              <span class="contact-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3.6 6.6 8.4 5.9 8.4-5.9" /></svg>
+              </span>
+              <p>
+                <strong>Email</strong>
+                <a class="contact-item__value" href="mailto:fernando@alephmedios.com">fernando@alephmedios.com</a>
+              </p>
+            </article>
+
+            <article class="contact-item">
+              <span class="contact-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><line x1="3.4" y1="9.2" x2="20.6" y2="9.2" /><line x1="3.4" y1="14.8" x2="20.6" y2="14.8" /><path d="M12 3c2.3 2.5 3.5 5.5 3.5 9s-1.2 6.5-3.5 9c-2.3-2.5-3.5-5.5-3.5-9S9.7 5.5 12 3Z" /></svg>
+              </span>
+              <p>
+                <strong data-i18n="websiteLabel">Sitio web</strong>
+                <a class="contact-item__value" href="https://www.alephmedios.com" target="_blank" rel="noopener">www.alephmedios.com</a>
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <form class="contact-form reveal-right" id="contactForm">
+          <div class="form-row">
+            <label>
+              <span data-i18n="formName">Nombre</span>
+              <input type="text" name="nombre" required data-i18n-placeholder="formNamePlaceholder" placeholder="Tu nombre" />
+            </label>
+
+            <label>
+              <span data-i18n="formCompany">Empresa</span>
+              <input type="text" name="empresa" data-i18n-placeholder="formCompanyPlaceholder" placeholder="Tu empresa" />
+            </label>
+          </div>
+
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required placeholder="correo@empresa.com" />
+          </label>
+
+          <label>
+            <span data-i18n="formMediaType">Tipo de medio</span>
+            <select name="tipo" id="mediaTypeSelect">
+              <option value="carteleras" data-i18n="optionBillboards">Carteleras espectaculares</option>
+              <option value="vallas" data-i18n="optionFences">Vallas</option>
+              <option value="parabuses" data-i18n="optionBusShelters">Parabuses</option>
+              <option value="mupis" data-i18n="optionMupis">Mupis</option>
+              <option value="centros" data-i18n="optionMalls">Centros comerciales</option>
+              <option value="pantallas" data-i18n="optionDigitalScreens">Pantallas digitales</option>
+              <option value="transporte" data-i18n="optionUrbanTransport">Transporte urbano</option>
+              <option value="btl" data-i18n="optionBtl">Activaciones BTL</option>
+              <option value="impresion" data-i18n="optionPrinting">Impresión digital y offset</option>
+              <option value="digital" data-i18n="optionWeb">Páginas web y tiendas en línea</option>
+              <option value="integral" data-i18n="formIntegral">Campaña integral</option>
+              <option value="otro" data-i18n="optionOther">Otro</option>
+            </select>
+          </label>
+
+          <label class="form-other" id="formOther" hidden>
+            <span data-i18n="formOtherLabel">¿Qué medio te interesa?</span>
+            <input type="text" name="otroMedio" data-i18n-placeholder="formOtherPlaceholder" placeholder="Escribe el medio que buscas" />
+          </label>
+
+          <label>
+            <span data-i18n="formMessage">Cuéntanos tu proyecto</span>
+            <textarea name="mensaje" required data-i18n-placeholder="formMessagePlaceholder" placeholder="Describe tu campaña, alcance deseado, zonas de interés..."></textarea>
+          </label>
+
+          <button class="form-submit" type="submit" id="formSubmit" data-i18n="formButton">
+            Enviar por WhatsApp →
+          </button>
+
+          <p class="form-status" id="formStatus" role="status" hidden></p>
+        </form>
       </div>
-    </div>
-
-    <form class="contact-form reveal-right" id="contactForm" action="https://formspree.io/f/TU_ID_AQUI" method="POST">
-      <div class="form-row">
-        <label>
-          <span data-i18n="formName">Nombre</span>
-          <input type="text" name="nombre" required data-i18n-placeholder="formNamePlaceholder" placeholder="Tu nombre" />
-        </label>
-
-        <label>
-          <span data-i18n="formCompany">Empresa</span>
-          <input type="text" name="empresa" data-i18n-placeholder="formCompanyPlaceholder" placeholder="Tu empresa" />
-        </label>
-      </div>
-
-      <label>
-        <span>Email</span>
-        <input type="email" name="email" required placeholder="correo@empresa.com" />
-      </label>
-
-      <label>
-        <span data-i18n="formMediaType">Tipo de medio</span>
-        <select name="tipo" id="mediaTypeSelect">
-          <option value="carteleras" data-i18n="optionBillboards">Carteleras espectaculares</option>
-          <option value="vallas" data-i18n="optionFences">Vallas</option>
-          <option value="parabuses" data-i18n="optionBusShelters">Parabuses</option>
-          <option value="mupis" data-i18n="optionMupis">Mupis</option>
-          <option value="centros" data-i18n="optionMalls">Centros comerciales</option>
-          <option value="pantallas" data-i18n="optionDigitalScreens">Pantallas digitales</option>
-          <option value="transporte" data-i18n="optionUrbanTransport">Transporte urbano</option>
-          <option value="btl" data-i18n="optionBtl">Activaciones BTL</option>
-          <option value="impresion" data-i18n="optionPrinting">Impresión digital y offset</option>
-          <option value="digital" data-i18n="optionWeb">Páginas web y tiendas en línea</option>
-          <option value="integral" data-i18n="formIntegral">Campaña integral</option>
-          <option value="otro" data-i18n="optionOther">Otro</option>
-        </select>
-      </label>
-
-      <label class="form-other" id="formOther" hidden>
-        <span data-i18n="formOtherLabel">¿Qué medio te interesa?</span>
-        <input type="text" name="otroMedio" data-i18n-placeholder="formOtherPlaceholder" placeholder="Escribe el medio que buscas" />
-      </label>
-
-      <label>
-        <span data-i18n="formMessage">Cuéntanos tu proyecto</span>
-        <textarea name="mensaje" required data-i18n-placeholder="formMessagePlaceholder" placeholder="Describe tu campaña, alcance deseado, zonas de interés..."></textarea>
-      </label>
-
-      <input type="hidden" name="_subject" value="Nuevo mensaje desde alephmedios.com" />
-
-      <button class="form-submit" type="submit" id="formSubmit" data-i18n="formButton">
-        Enviar mensaje →
-      </button>
-
-      <p class="form-status" id="formStatus" role="status" hidden></p>
-    </form>
-
-  </div>
-</section>
+    </section>
   </main>
 
   <!-- FOOTER -->
@@ -528,6 +521,7 @@
       <a href="#inicio" class="brand brand--image" aria-label="Aleph Medios inicio">
         <img src="assets/logoaleph.png" alt="Aleph Medios" class="brand__logo" />
       </a>
+
       <div class="footer__links">
         <a href="#about" data-i18n="navAbout">Nosotros</a>
         <a href="#medios" data-i18n="navMedia">Medios</a>
@@ -543,9 +537,13 @@
       <p class="footer__copy" data-i18n="footerCopy">
         © 2026 Aleph Medios. Todos los derechos reservados.
       </p>
+
+      <a href="https://web-ltr.com" class="footer-credit-logo" target="_blank" rel="noopener" aria-label="Diseñado por WEB LTR">
+        <img src="assets/logo-web-ltr.png" alt="WEB LTR" />
+      </a>
     </div>
   </footer>
 
-  <script src="script.js?v=14"></script>
+  <script src="script.js?v=15"></script>
 </body>
 </html>

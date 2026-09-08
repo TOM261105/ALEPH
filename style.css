@@ -320,7 +320,6 @@ p {
 }
 
 /* HERO */
-
 .hero {
   position: relative;
   display: flex;
@@ -348,7 +347,6 @@ p {
   pointer-events: none;
 }
 
-/* Esta capa oscura permite que el texto se lea aunque cambies la foto */
 .hero__bg::after {
   content: "";
   position: absolute;
@@ -470,6 +468,7 @@ p {
   aspect-ratio: 1;
   border: 6px solid var(--offwhite);
 }
+
 .about__video-main {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -478,7 +477,6 @@ p {
   box-shadow: var(--shadow);
   display: block;
 }
-
 
 /* MEDIA */
 .media {
@@ -507,12 +505,10 @@ p {
   align-items: stretch;
 }
 
-/* Primera fila: 3 tarjetas (2 columnas cada una) */
 .media-card:nth-child(-n + 3) {
   grid-column: span 2;
 }
 
-/* Filas siguientes: 2 tarjetas por fila, centradas y sin crecer de mas */
 .media-card:nth-child(n + 4) {
   grid-column: span 2;
   min-height: 380px;
@@ -652,7 +648,6 @@ p {
   text-transform: uppercase;
 }
 
-/* En celular y tablet no existe el hover: el detalle se muestra siempre */
 @media (hover: none) {
   .media-card__detail {
     max-height: 200px;
@@ -934,7 +929,6 @@ p {
     margin-bottom: 38px;
   }
 
-  /* En celular las tarjetas se recorren en riel horizontal */
   .media-new__grid {
     display: flex;
     grid-template-columns: none;
@@ -959,7 +953,6 @@ p {
     scroll-snap-align: start;
   }
 
-  /* En el riel todas las tarjetas miden igual */
   .media-card:nth-child(-n + 3),
   .media-card:nth-child(n + 4) {
     grid-column: auto;
@@ -1260,12 +1253,14 @@ a.contact-item__value:hover {
 
 /* FOOTER */
 .footer {
+  position: relative;
   border-top: 1px solid var(--border-light);
   background: rgba(0, 0, 0, 0.48);
-  padding-block: 34px;
+  padding-block: 34px 54px;
 }
 
 .footer__inner {
+  position: relative;
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 22px;
@@ -1303,6 +1298,27 @@ a.contact-item__value:hover {
 .footer__copy {
   grid-column: 1 / -1;
   text-align: center;
+}
+
+/* LOGO DE MI MARCA EN FOOTER */
+.footer-credit-logo {
+  position: absolute;
+  right: 0;
+  bottom: -32px;
+  display: block;
+  opacity: 0.55;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer-credit-logo:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.footer-credit-logo img {
+  width: 54px;
+  height: auto;
+  display: block;
 }
 
 /* ANIMATIONS */
@@ -1390,6 +1406,11 @@ a.contact-item__value:hover {
   .footer__copy {
     text-align: left;
   }
+
+  .footer-credit-logo {
+    right: 0;
+    bottom: -34px;
+  }
 }
 
 /* LOGO */
@@ -1413,7 +1434,6 @@ a.contact-item__value:hover {
   width: 190px;
 }
 
-/* En pantallas medianas el logo baja para no encimarse con el menu */
 @media (max-width: 960px) {
   .brand__logo {
     width: 240px;
@@ -1506,7 +1526,6 @@ a.contact-item__value:hover {
     flex-direction: column;
   }
 
-  /* Los datos se quedan en fila: 38+ y OOH uno junto al otro */
   .stats {
     flex-direction: row;
     align-items: flex-start;
@@ -1530,7 +1549,6 @@ a.contact-item__value:hover {
     grid-template-columns: 1fr;
   }
 
-  /* Contacto mas compacto en celular */
   .contact__grid {
     gap: 38px;
   }
@@ -1572,6 +1590,19 @@ a.contact-item__value:hover {
 
   .scroll-hint {
     right: 24px;
+  }
+
+  .footer {
+    padding-bottom: 64px;
+  }
+
+  .footer-credit-logo {
+    right: 0;
+    bottom: -42px;
+  }
+
+  .footer-credit-logo img {
+    width: 44px;
   }
 }
 

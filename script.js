@@ -4,6 +4,8 @@
 const siteHeader = document.getElementById("siteHeader");
 
 window.addEventListener("scroll", () => {
+  if (!siteHeader) return;
+
   if (window.scrollY > 60) {
     siteHeader.classList.add("is-scrolled");
   } else {
@@ -87,7 +89,6 @@ const mediaRailNext = document.getElementById("mediaRailNext");
 
 if (mediaRail && mediaRailPrev && mediaRailNext && mediaCards.length > 0) {
   function pasoDelRiel() {
-    // ancho de una tarjeta mas el gap entre tarjetas
     return mediaCards[0].offsetWidth + 16;
   }
 
@@ -363,7 +364,7 @@ const translations = {
     formMessage: "Cuéntanos tu proyecto",
     formMessagePlaceholder:
       "Describe tu campaña, alcance deseado, zonas de interés...",
-    formButton: "Enviar mensaje →",
+    formButton: "Enviar por WhatsApp →",
 
     footerCopy: "© 2026 Aleph Medios. Todos los derechos reservados.",
   },
@@ -547,7 +548,7 @@ const translations = {
     formMessage: "Tell us about your project",
     formMessagePlaceholder:
       "Describe your campaign, desired reach, areas of interest...",
-    formButton: "Send message →",
+    formButton: "Send via WhatsApp →",
 
     footerCopy: "© 2026 Aleph Medios. All rights reserved.",
   },
@@ -560,7 +561,6 @@ const languageToggle = document.getElementById("languageToggle");
 function changeLanguage(language) {
   const selectedTranslations = translations[language];
 
-  // Cambia textos normales
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.getAttribute("data-i18n");
 
@@ -569,7 +569,6 @@ function changeLanguage(language) {
     }
   });
 
-  // Cambia textos con HTML, por ejemplo <br>, <em> o listas
   document.querySelectorAll("[data-i18n-html]").forEach((element) => {
     const key = element.getAttribute("data-i18n-html");
 
@@ -578,7 +577,6 @@ function changeLanguage(language) {
     }
   });
 
-  // Cambia placeholders de inputs y textarea
   document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
     const key = element.getAttribute("data-i18n-placeholder");
 
@@ -587,11 +585,11 @@ function changeLanguage(language) {
     }
   });
 
-  // Cambia el atributo lang del HTML
   document.documentElement.setAttribute("lang", language);
 
-  // Cambia el texto del botón
-  languageToggle.textContent = language === "es" ? "EN" : "ES";
+  if (languageToggle) {
+    languageToggle.textContent = language === "es" ? "EN" : "ES";
+  }
 }
 
 if (languageToggle) {
@@ -602,10 +600,14 @@ if (languageToggle) {
 }
 
 // ===============================
-// FORMULARIO
+// FORMULARIO A WHATSAPP
 // ===============================
-const contactForm = document.getElementById("contactForm");
-const formSubmit = document.getElementById("formSubmit");
+const contactForm =
+  document.getElementById("contactForm") || document.querySelector(".contact-form");
+
+const formSubmit =
+  document.getElementById("formSubmit") || document.querySelector(".form-submit");
+
 const formStatus = document.getElementById("formStatus");
 const mediaTypeSelect = document.getElementById("mediaTypeSelect");
 const otherField = document.getElementById("formOther");
@@ -621,59 +623,65 @@ if (mediaTypeSelect) {
   toggleOtherField();
 }
 
-const formMessages = {
-  es: {
-    enviando: "Enviando...",
-    exito: "Gracias. Tu mensaje fue enviado correctamente.",
-    error: "No se pudo enviar el mensaje. Intenta de nuevo o escríbenos a fernando@alephmedios.com",
-    boton: "Enviar mensaje →",
-  },
-  en: {
-    enviando: "Sending...",
-    exito: "Thank you. Your message was sent successfully.",
-    error: "The message could not be sent. Please try again or write to fernando@alephmedios.com",
-    boton: "Send message →",
-  },
-};
+function obtenerValor(selector) {
+  return contactForm?.querySelector(selector)?.value.trim() || "";
+}
 
-function mostrarEstado(tipo) {
-  if (!formStatus) return;
-
-  formStatus.textContent = formMessages[currentLanguage][tipo];
-  formStatus.className = "form-status is-" + (tipo === "exito" ? "ok" : "error");
-  formStatus.hidden = false;
+function obtenerTextoSelect(selector) {
+  const select = contactForm?.querySelector(selector);
+  return select?.selectedOptions?.[0]?.textContent.trim() || "";
 }
 
 if (contactForm) {
-  contactForm.addEventListener("submit", async (event) => {
+  contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const textos = formMessages[currentLanguage];
+    const nombre = obtenerValor('[name="nombre"]');
+    const empresa = obtenerValor('[name="empresa"]');
+    const email = obtenerValor('[name="email"]');
+    const tipo = obtenerTextoSelect('[name="tipo"]');
+    const otroMedio = obtenerValor('[name="otroMedio"]');
+    const mensaje = obtenerValor('[name="mensaje"]');
 
-    formSubmit.disabled = true;
-    formSubmit.textContent = textos.enviando;
-    if (formStatus) formStatus.hidden = true;
+    // Número de WhatsApp: 52 + número de 10 dígitos, sin espacios ni signos.
+    const telefonoWhatsApp = "525554037859";
 
-    try {
-      const respuesta = await fetch(contactForm.action, {
-        method: "POST",
-        body: new FormData(contactForm),
-        headers: { Accept: "application/json" },
-      });
+    const saludo =
+      currentLanguage === "es"
+        ? "Hola, quiero información para una campaña OOH."
+        : "Hello, I would like information for an OOH campaign.";
 
-      if (respuesta.ok) {
-        mostrarEstado("exito");
-        contactForm.reset();
-        toggleOtherField();
-      } else {
-        mostrarEstado("error");
-      }
-    } catch (error) {
-      mostrarEstado("error");
+    let texto = `${saludo}\n\n`;
+    texto += `Nombre / Name: ${nombre || "No especificado"}\n`;
+    texto += `Empresa / Company: ${empresa || "No especificada"}\n`;
+    texto += `Email: ${email || "No especificado"}\n`;
+    texto += `Tipo de medio / Media type: ${tipo || "No especificado"}\n`;
+
+    if (otroMedio) {
+      texto += `Otro medio / Other media: ${otroMedio}\n`;
     }
 
-    formSubmit.disabled = false;
-    formSubmit.textContent = textos.boton;
+    texto += `\nMensaje / Message:\n${mensaje || "No especificado"}`;
+
+    const whatsappURL = `https://wa.me/${telefonoWhatsApp}?text=${encodeURIComponent(texto)}`;
+
+    window.open(whatsappURL, "_blank");
+
+    contactForm.reset();
+    toggleOtherField();
+
+    if (formStatus) {
+      formStatus.hidden = false;
+      formStatus.textContent =
+        currentLanguage === "es"
+          ? "Se abrió WhatsApp con tu mensaje listo para enviar."
+          : "WhatsApp opened with your message ready to send.";
+      formStatus.className = "form-status is-ok";
+    }
+
+    if (formSubmit) {
+      formSubmit.textContent = translations[currentLanguage].formButton;
+    }
   });
 }
 
@@ -699,13 +707,12 @@ function playAllVideos() {
 
     if (intento !== undefined) {
       intento.catch(() => {
-        // iOS en modo de bajo consumo bloquea el autoplay hasta que hay interaccion
+        // iOS en modo bajo consumo puede bloquear autoplay hasta que haya interacción
       });
     }
   });
 }
 
-// Intentos en los momentos en que iOS suele permitirlo
 window.addEventListener("load", playAllVideos);
 document.addEventListener("DOMContentLoaded", playAllVideos);
 document.addEventListener("touchstart", playAllVideos, { once: true });
@@ -716,7 +723,6 @@ document.addEventListener("visibilitychange", () => {
   if (!document.hidden) playAllVideos();
 });
 
-// Si el video entra en pantalla y sigue pausado, se reintenta
 const videoObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {

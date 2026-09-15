@@ -309,15 +309,10 @@ const translations = {
 
     panelDigitalTitle: "Páginas Web y Tiendas en Línea",
     panelDigitalBody: `
-      <p>Complementamos tu presencia en exteriores con una presencia digital a la altura de tu marca.</p>
-      <ul>
-        <li>Sitios web corporativos y de marca</li>
-        <li>Tiendas en línea y comercio electrónico</li>
-        <li>Landing pages para campañas</li>
-        <li>Diseño adaptado a celular y computadora</li>
-        <li>Catálogos digitales de productos</li>
-        <li>Integración con redes sociales</li>
-      </ul>`,
+      <p class="media-panel__lead">Desarrollo de páginas Web: la base de una estrategia digital exitosa.</p>
+      <p>Ofrecemos servicios de programación web personalizados para ayudarte a destacar en el mundo digital.</p>
+      <p>Creamos sitios web a la medida, seguros y optimizados para ofrecer una experiencia de usuario excepcional.</p>
+      <p>Aprovecha nuestras soluciones para mejorar tu visibilidad online y atrae más tráfico a tu sitio.</p>`,
 
     statementText:
       "Creemos que cada espacio en la ciudad es una oportunidad para contar una historia que mueve a las personas.",
@@ -493,15 +488,10 @@ const translations = {
 
     panelDigitalTitle: "Websites and Online Stores",
     panelDigitalBody: `
-      <p>We complement your outdoor presence with a digital presence that matches your brand.</p>
-      <ul>
-        <li>Corporate and brand websites</li>
-        <li>Online stores and e-commerce</li>
-        <li>Campaign landing pages</li>
-        <li>Design adapted to mobile and desktop</li>
-        <li>Digital product catalogs</li>
-        <li>Social media integration</li>
-      </ul>`,
+      <p class="media-panel__lead">Web development: the foundation of a successful digital strategy.</p>
+      <p>We offer custom web programming services to help you stand out in the digital world.</p>
+      <p>We build tailor-made websites, secure and optimized to deliver an exceptional user experience.</p>
+      <p>Take advantage of our solutions to improve your online visibility and drive more traffic to your site.</p>`,
 
     statementText:
       "We believe that every space in the city is an opportunity to tell a story that moves people.",

@@ -1480,3 +1480,19 @@ a.contact-item__value:hover {
     width: 42px;
   }
 }
+
+/* AJUSTE LOGO WEB-LTR FOOTER EN TELÉFONO */
+@media (max-width: 700px) {
+  .footer-credit-logo {
+    grid-column: 1 / -1;
+    justify-self: end;
+    margin-top: 0;
+    width: auto;
+  }
+
+  .footer-credit-logo img {
+    width: 32px !important;
+    max-width: 32px !important;
+    height: auto !important;
+  }
+}

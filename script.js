@@ -310,15 +310,11 @@ const translations = {
 
     panelDigitalTitle: "Páginas Web y Tiendas en Línea",
     panelDigitalBody: `
-      <p>Complementamos tu presencia en exteriores con una presencia digital a la altura de tu marca.</p>
-      <ul>
-        <li>Sitios web corporativos y de marca</li>
-        <li>Tiendas en línea y comercio electrónico</li>
-        <li>Landing pages para campañas</li>
-        <li>Diseño adaptado a celular y computadora</li>
-        <li>Catálogos digitales de productos</li>
-        <li>Integración con redes sociales</li>
-      </ul>`,
+      <p>Desarrollo de páginas Web: la base de una estrategia digital exitosa.
+Ofrecemos servicios de programación web personalizados para ayudarte a destacar en el mundo digital. 
+Creamos sitios web a la medida, seguros y optimizados para ofrecer una experiencia de usuario excepcional. 
+Aprovecha nuestras soluciones para mejorar tu visibilidad online y atrae más tráfico a tu sitio.</p>
+
 
     statementText:
       "Creemos que cada espacio en la ciudad es una oportunidad para contar una historia que mueve a las personas.",

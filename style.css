@@ -1443,3 +1443,40 @@ a.contact-item__value:hover {
     height: 100%;
   }
 }
+
+/* LOGO WEB-LTR EN FOOTER */
+.footer__inner {
+  position: relative;
+}
+
+.footer-credit-logo {
+  grid-column: 3 / 4;
+  justify-self: end;
+  align-self: end;
+  margin-top: -8px;
+  opacity: 0.55;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer-credit-logo:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.footer-credit-logo img {
+  width: 46px;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 960px) {
+  .footer-credit-logo {
+    grid-column: 1 / -1;
+    justify-self: end;
+    margin-top: -4px;
+  }
+
+  .footer-credit-logo img {
+    width: 42px;
+  }
+}

@@ -849,7 +849,15 @@ p {
 }
 
 .media-panel__body p + p {
-  margin-top: 12px;
+  margin-top: 14px;
+}
+
+/* Frase de entrada de un panel, un punto mas grande y en blanco */
+.media-panel__lead {
+  color: var(--white) !important;
+  font-size: 17px !important;
+  font-weight: 400 !important;
+  line-height: 1.5;
 }
 
 .media-panel__body ul {
